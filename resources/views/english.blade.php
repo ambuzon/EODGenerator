@@ -6,7 +6,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,20 +24,17 @@
       {{ csrf_field() }}
       <div class="form-row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="First name" name="firstName">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" name="lastName">
+          <input type="text" class="form-control" placeholder="Student Name" name="firstName" id="firstName" oninput="getResults()" required>
         </div>
       </div>
       <br>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Male">
+        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Male" checked>
         <label class="form-check-label" for="inlineRadio1">Male</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Female">
+        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Female">
         <label class="form-check-label" for="inlineRadio2">Female</label>
       </div>
       <br>
@@ -47,26 +44,26 @@
       <label for="exampleFormControlSelect2"><i>"demonstrates achievement of <span style="color:red">[input]</span> of the expected learning standards addressed during the current reporting period."</i></label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="all">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="all" checked>
         <label class="form-check-label" for="inlineRadio2">all</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="most">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="most">
         <label class="form-check-label" for="inlineRadio2">most</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="some">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="some">
         <label class="form-check-label" for="inlineRadio2">some</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="few">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="few">
         <label class="form-check-label" for="inlineRadio2">few</label>
       </div>
       <br>
       <br>
       <div class="form-group">
-        <label for="exampleFormControlSelect2"><b>1 -Attitude/Approach</b></label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level1">
+        <label for="level1"><b>1 -Attitude/Approach</b></label>
+        <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           <option>He is an enthusiastic student who is making steady progress.</option>
           <option>He is a diligent, capable student who is making excellent progress in all of his English skills.</option>
@@ -95,8 +92,8 @@
       </div>
       <br>
       <div class="form-group">
-        <label for="exampleFormControlSelect2"><b>2 -Strengths</b></label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level2">
+        <label for="level2"><b>2 -Strengths</b></label>
+        <select class="form-control" id="level2" name="level2" oninput="getResults()">
           <option>[None]</option>
           <option>He has made excellent progress on the independent comprehension tasks and can make sound inferences from the materials he reads in the lessons.</option>
           <option>He has excellent comprehension skills and is able to use a wide range of strategies to make accurate and astute responses. One area of comprehension that could be further developed is using contextual clues to make informed guesses about the meaning of unknown words</option>
@@ -112,8 +109,8 @@
       </div>
       <br>
       <div class="form-group">
-        <label for="exampleFormControlSelect2"><b>3 -How they went on mid-term/end of term test</b></label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level3">
+        <label for="level3"><b>3 -How they went on mid-term/end of term test</b></label>
+        <select class="form-control" id="level3" name="level3" oninput="getResults()">
           <option>[None]</option>
           <option>He performed exceptionally well on the end of term test. This is testament to his hard work in class and this highlights his excellent understanding of the concepts that were covered.</option>
           <option>He achieved an excellent score on the term test. This highlights his excellent understanding of the  concepts that were covered.</option>
@@ -127,8 +124,8 @@
       </div>
       <br>
       <div class="form-group">
-        <label for="exampleFormControlSelect2"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4">
+        <label for="level4"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
+        <select class="form-control" id="level4" name="level4" oninput="getResults()">
           <option>[None]</option>
           <option>In reading comprehension, he is able to answer literal questions but struggles when making inferences from a text. He needs to become aware that reading is not just a mechanical task and that it involves thinking about the text at a much deeper level.</option>
           <option>He does not perform well on reading comprehension tasks as often his answers do not contain enough detail. To develop his comprehension skills, he should be encouraged to use evidence from the text to justify his answers and begin to identify distinctive language, structural and presentational features and show how these help the reader draw meaning from the text.</option>
@@ -144,13 +141,74 @@
           <option>He really struggles with reading comprehension due to his limited range of vocabulary. It is essential that he reads as many books as he can from The Raz-Kids website. This will put him in a far better position to be able to interpret a text.</option>
         </select>
       </div>
+      <div class="form-group">
+        <label for="result">Result</label>
+        <textarea class="form-control" id="result" rows="3"></textarea>
+      </div>
       <div class="col-auto my-1">
-        <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="fa fa-angle-left">
+        <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
           </i> Back
         </a>
         <button type="submit" class="btn btn-warning">Submit</button>
       </div>  
     </form>
     </div>
+    // JavaScript Code 
+    <script>
+        function getName() {
+            var firstName = document.getElementById('firstName').value;
+            return firstName;
+        } 
+
+        function getGender(){
+          var gender = document.querySelector("input[name=gender]:checked").value;
+          return gender;
+        }
+
+        function getLevel0(){
+          var level0 = document.querySelector("input[name=level0]:checked").value;
+          var level0_value = "demonstrates achievement of " + level0 + " of the expected learning standards addressed during the current reporting period."
+          return level0_value;
+        }
+
+        function getLevel1(){
+          var level1 = document.getElementById("level1");
+          level1 = level1.options[level1.selectedIndex].value;
+          return level1;
+        }
+
+        function getLevel2(){
+          var level2 = document.getElementById("level2");
+          level2 = level2.options[level2.selectedIndex].value;
+          return level2;
+        }
+
+        function getLevel3(){
+          var level3 = document.getElementById("level3");
+          level3 = level3.options[level3.selectedIndex].value;
+          return level3;
+        }
+        
+        function getLevel4(){
+          var level4 = document.getElementById("level4");
+          level4 = level4.options[level4.selectedIndex].value;
+          return level4;
+        }
+
+        function getResults(){
+          var result = getName() + " " + getLevel0() + " " + getLevel1();
+          if(getGender() === "Female"){
+            result = result.replace(" he ", " she ");
+            result = result.replace(" He ", " She ");
+            result = result.replace(" his ", " her ");
+            result = result.replace(" His ", " Her ");
+          }
+          result = result.replace("[None]", "");
+          result = result.replace("[student]", getName());
+          document.getElementById('result').value = result;
+        }
+
+
+    </script>
 </body>
 </html>

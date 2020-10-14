@@ -152,7 +152,7 @@
       </div>
       <div class="form-group">
         <label for="result">Result</label>
-        <textarea class="form-control" id="result" rows="3"></textarea>
+        <textarea class="form-control" id="result" rows="15"></textarea>
       </div>
       <div class="col-auto my-1">
         <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">

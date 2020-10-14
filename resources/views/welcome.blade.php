@@ -42,7 +42,7 @@
       </div>
 
       <div class="col-auto my-1">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Next</button>
       </div>
     </form>
 </body>

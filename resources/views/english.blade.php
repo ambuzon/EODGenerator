@@ -142,7 +142,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="result">Result</label>
+        <label for="result">Result (Please Edit Only Once Finished Placing Comments</label>
         <textarea class="form-control" id="result" rows="15"></textarea>
       </div>
       <div class="col-auto my-1">

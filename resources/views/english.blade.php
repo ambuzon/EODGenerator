@@ -149,7 +149,7 @@
         <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
           </i> Back
         </a>
-        <button type="submit" class="btn btn-warning">Submit</button>
+        <button type="button" class="btn btn-warning" onclick="myFunction()">Copy text</button>
       </div>  
     </form>
     </div>
@@ -198,9 +198,9 @@
         function getResults(){
           var result = getName() + " " + getLevel0() + " " + getLevel1() + " " + getLevel2() + " " + getLevel3() + " " + getLevel4();
           if(getGender() === "Female"){
-            result = result.replaceAll(" he", " she ");
-            result = result.replaceAll(" He", " She ");
-            result = result.replaceAll(" his", " her ");
+            result = result.replaceAll(" he ", " she ");
+            result = result.replaceAll(" He ", " She ");
+            result = result.replaceAll(" his ", " her ");
             result = result.replaceAll(" His ", " Her ");
           }
           result = result.replaceAll("[None]", "");
@@ -208,6 +208,21 @@
 
           document.getElementById('result').value = result;
         }
+
+        function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("result");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
 
 
     </script>

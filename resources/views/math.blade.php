@@ -24,19 +24,16 @@
       {{ csrf_field() }}
       <div class="form-row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="First name" name="firstName">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" name="lastName">
+          <input type="text" class="form-control" placeholder="Student Name" name="firstName" id="firstName" oninput="getResults()" required>
         </div>
       </div>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Male">
+        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Male" checked>
         <label class="form-check-label" for="inlineRadio1">Male</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Female">
+        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Female">
         <label class="form-check-label" for="inlineRadio2">Female</label>
       </div>
       <br>
@@ -47,26 +44,26 @@
       <label for="exampleFormControlSelect2">Demonstrates achievement of <span style="color:blue">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="all">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="all" checked>
         <label class="form-check-label" for="inlineRadio2">all</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="most">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="most">
         <label class="form-check-label" for="inlineRadio2">most</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="some">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="some">
         <label class="form-check-label" for="inlineRadio2">some</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" value="few">
+        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="few">
         <label class="form-check-label" for="inlineRadio2">few</label>
       </div>
       <br>
         
       <div class="form-group">
         <label for="exampleFormControlSelect2">1 -Attitude /Approach</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level1">
+        <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           <option>He has displayed great application in all aspects of Mathematics and demonstrates he is capable of working at a high level.</option>
           <option>He has worked extremely hard in Mathematics this term and his/her weekly test scores are testament to him diligence and perseverance.</option>
@@ -88,7 +85,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect2">2a -Strengths</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level2a">
+        <select class="form-control" id="level2a" name="level2a" oninput="getResults()">
           <option>[None]</option>
           <option>He has excellent mental maths skills and is able to do calculations both quickly and accurately.</option>
           <option>He has excellent mental maths skills and readily acquires difficult concepts when introduced</option>
@@ -111,7 +108,7 @@
       <label for="exampleFormControlSelect2">He demonstrates <span style="color:blue">[input]</span> understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowoledge to suit a particular problem or situation.</label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level2b" id="level2b" value="an excellent">
+        <input class="form-check-input" type="radio" name="level2b" id="level2b" value="an excellent" checked>
         <label class="form-check-label" for="inlineRadio2">Excellent</label>
       </div>
       <div class="form-check form-check-inline">
@@ -127,7 +124,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect2">2c -Strengths</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level2c">
+        <select class="form-control" id="level2c" name="level2c" oninput="getResults()">
           <option>[None]</option>
           <option>He is usually able to work independently on the tasks but on occasions needs prompting from the teacher so that the tasks can be completed in the allotted time.</option>
           <option>He always approaches lessons with a positive learning attitude and has achieved excellent results on the weekly tests.</option>
@@ -143,7 +140,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect2">3a -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level3a">
+        <select class="form-control" id="level3a" name="level3a" oninput="getResults()">
           <option>[None]</option>
           <option>He performed exceptionally well on the end of term test. This is testament to his hard work in class and this highlights his excellent understanding of the concepts that were covered.</option>
           <option>He achieved an excellent score on the term test. This highlights his excellent understanding of the  concepts that were covered.</option>
@@ -158,7 +155,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect2">3b -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level3b">
+        <select class="form-control" id="level3b" name="level3b" oninput="getResults()">
           <option>[None]</option>
           <option>He performed very well on the end of term test. He has worked very well in class and his very good grade reflects a very thorough understanding of the concepts that were covered.</option>
           <option>His test score was very good and this confirms that he has mastered and can apply the various concepts that were introduced this term.</option>
@@ -170,7 +167,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect2">3c -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level3c">
+        <select class="form-control" id="level3c" name="level3c" oninput="getResults()">
           <option>[None]</option>
           <option>His examination result was very encouraging as it showed a solid level of understanding and reasonable examination techniques. With continued effort and application his long term prospects in this subject area are looking good.</option>
           <option>His exam performances were very encouraging and it confirmed that he is clearly understanding the material we have covered so far and that adequate revision had be done in the weeks prior to the examination.</option>
@@ -185,7 +182,7 @@
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect2">4a -Areas that need to be improved/How to Improve Them</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4a">
+        <select class="form-control" id="level4a" name="level4a" oninput="getResults()">
           <option>[None]</option>
           <option>I would like him to improve the speed and accuracy of mental computations as well as reviewing concepts that were introduced in class. He would benefit by practicing his timetables and number bonds at home.</option>
           <option>An area of concern is the very slow recall of basic number facts, number bonds and the timetables. This has severely hampered his progress in mathematics to date. I am looking forward to him  practicing these at home as it will allow him to achieve much greater success in maths.</option>
@@ -197,7 +194,7 @@
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect2">4b -Areas that need to be improved/How to Improve Them</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4b">
+        <select class="form-control" id="level4b" name="level4b" oninput="getResults()">
           <option>[None]</option>
           <option>He has made some progress with respect to problem solving this term but this is an area that she has to work hard on to master. He would profit by first trying to identify the most appropriate strategy to tackle the problem as well as showing a lot more detailed working. If he adopted this more structured approach she should have a much higher degree of success with this challenging area of Maths.</option>
           <option>He has made some progress with respect to problem solving this term but this is still a difficult area of mathematics for him. He would benefit by first trying to identify the most appropriate strategy as well as showing a lot more detailed working.</option>
@@ -210,7 +207,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Making Careless Mistakes</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4cCat1">
+        <select class="form-control" id="level4c" name="level4c" oninput="getResults()">
           <option>[None]</option>
           <option>He likes to do things quickly and he is often lazy to set his work out properly or go through the necessary required steps that a particular problem demands.  This results in him either making careless errors or being unable to solve a problem. Next term, I would like him to show all his working and well as approach his work in a far more methodical way. This more structured approach will enable Reagan to achieve results which truly reflect his capabilities in this subject.</option>
           <option>Next term, I would like to him to work more slowly on the tasks to ensure a higher degree of accuracy in his work. This will enable him to achieve grades that truly reflect his ability in this subject.  </option>
@@ -222,7 +219,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Setting Out/Book Work</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4cCat2">
+        <select class="form-control" id="level4c1" name="level4c1" oninput="getResults()">
           <option>[None]</option>
           <option>One area that he needs to improve is the setting out of his work. He has a tendency to be a little messy and disorganized and this result in careless errors being made. I am looking forward to an improvement in his bookwork in the coming term.</option>
           <option>He needs to set his work out much more neatly and to ensure that all the working is shown. This will result in his achieving a much higher success rate with problems when they are posed.</option>
@@ -231,7 +228,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Attitude</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4cCat3">
+        <select class="form-control" id="level4c2" name="level4c2" oninput="getResults()">
           <option>[None]</option>
           <option>He has a very negative view of Maths as a subject and he also believes that he has no aptitude for Maths. If he were to adopt a much more positive attitude to the subject and have more belief in his ability , I believe he would be capable of achieving much better results.</option>
           <option>He has a very poor attitude and often seeks teacher support when he doesn’t really need it. He gives up very easily when faced with a task that is slightly challenging and needs constant motivation to stay on task. He has made little progress with the problem solving component of the course as this requires perseverance and ………… at this stage doesn’t want to place him outside his comfort zone. He needs to make a much more concerted effort in the next term if she is to make any real progress in mathematics.</option>
@@ -246,21 +243,163 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Understanding /Mastery of the Curriculum</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="level4cCat4">
+        <select class="form-control" id="level4c3" name="level4c3" oninput="getResults()">
           <option>[None]</option>
           <option>He demonstrates only a very rudimentary understanding of the topics that we have covered this semester. He struggles applying his maths knowledge in a wide variety of situations. Frequent support needs to be provided to enable him to complete his maths tasks. It is imperative that he reviews the concepts that were covered in class at home.</option>
           <option>He finds the curriculum extremely challenging and requires significant teacher support for the majority of work. he has a great deal of difficulty in applying his maths knowledge to suit a particular problem or situation. He  needs continual teacher support and guidance while is working on all maths activities. It is essential that he reviews the concepts that were covered in class at home.</option>
-                    
         </select>
       </div>
-
+      <div class="form-group">
+        <label for="result">Result</label>
+        <textarea class="form-control" id="result" rows="3"></textarea>
+      </div>
       <div class="col-auto my-1">
-        <a href="{{ url()->previous() }}" class="btn btn-primary"><i class="fa fa-angle-left">
+        <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
           </i> Back
         </a>
-        <button type="submit" class="btn btn-warning">Submit</button>
+        <button type="button" class="btn btn-warning" onclick="myFunction()">Copy text</button>
       </div>  
     </form>
     </div>
+    <script>
+      function getName() {
+          var firstName = document.getElementById('firstName').value;
+          return firstName;
+      } 
+
+      function getGender(){
+        var gender = document.querySelector("input[name=gender]:checked").value;
+        return gender;
+      }
+
+      function getLevel0(){
+        var level0 = document.querySelector("input[name=level0]:checked").value;
+        var level0_value = "demonstrates achievement of " + level0 + " of the expected learning standards addressed during the current reporting period."
+        return level0_value;
+      }
+
+      function getLevel1(){
+        var level1 = document.getElementById("level1");
+        level1 = level1.options[level1.selectedIndex].value;
+        return level1;
+      }
+
+      function getLevel2a(){
+        var level2a = document.getElementById("level2a");
+        level2a = level2a.options[level2a.selectedIndex].value;
+        return level2a;
+      }
+
+      function getLevel2b(){
+        var level2b = document.querySelector("input[name=level2b]:checked").value;
+        var level2b_value = "He demonstrates "+level2b+" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowoledge to suit a particular problem or situation.";
+        return level2b_value;
+      }
+
+      function getLevel2c(){
+        var level2c = document.getElementById("level2c");
+        level2c = level2c.options[level2c.selectedIndex].value;
+        return level2c;
+      }
+
+      function getLevel3a(){
+        var level3a = document.getElementById("level3a");
+        level3a = level3a.options[level3a.selectedIndex].value;
+        return level3a;
+      }
+
+      function getLevel3b(){
+        var level3b = document.getElementById("level3b");
+        level3b = level3b.options[level3b.selectedIndex].value;
+        return level3b;
+      }
+
+      function getLevel3c(){
+        var level3c = document.getElementById("level3c");
+        level3c = level3c.options[level3c.selectedIndex].value;
+        return level3c;
+      }
+      
+      function getLevel4a(){
+        var level4a = document.getElementById("level4a");
+        level4a = level4a.options[level4a.selectedIndex].value;
+        return level4a;
+      }
+
+      function getLevel4b(){
+        var level4b = document.getElementById("level4b");
+        level4b = level4b.options[level4b.selectedIndex].value;
+        return level4b;
+      }
+
+      function getLevel4c(){
+        var level4c = document.getElementById("level4c");
+        level4c = level4c.options[level4c.selectedIndex].value;
+        return level4c;
+      }
+
+      function getLevel4c1(){
+        var level4c1 = document.getElementById("level4c1");
+        level4c1 = level4c1.options[level4c1.selectedIndex].value;
+        return level4c1;
+      }
+
+      function getLevel4c2(){
+        var level4c2 = document.getElementById("level4c2");
+        level4c2 = level4c2.options[level4c2.selectedIndex].value;
+        return level4c2;
+      }
+
+      function getLevel4c3(){
+        var level4c3 = document.getElementById("level4c3");
+        level4c3 = level4c3.options[level4c3.selectedIndex].value;
+        return level4c3;
+      }
+
+
+      function getResults(){
+        var result = getName() + " " + 
+                    getLevel0() + " " + 
+                    getLevel1() + " " + 
+                    getLevel2a() + " " + 
+                    getLevel2b() + " " + 
+                    getLevel2c() + " " + 
+                    getLevel3a() + " " + 
+                    getLevel3b() + " " + 
+                    getLevel3c() + " " + 
+                    getLevel4a() + " " + 
+                    getLevel4b() + " " + 
+                    getLevel4c() + " " + 
+                    getLevel4c1() + " " + 
+                    getLevel4c2() + " " + 
+                    getLevel4c3();
+
+        if(getGender() === "Female"){
+          result = result.replaceAll(" he ", " she ");
+          result = result.replaceAll(" He ", " She ");
+          result = result.replaceAll(" his ", " her ");
+          result = result.replaceAll(" His ", " Her ");
+        }
+        result = result.replaceAll("[None]", "");
+        result = result.replaceAll("[student]", getName());
+
+        document.getElementById('result').value = result;
+      }
+
+      function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("result");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
+  </script>
 </body>
 </html>

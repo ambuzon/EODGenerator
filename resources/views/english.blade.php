@@ -198,13 +198,13 @@
         function getResults(){
           var result = getName() + " " + getLevel0() + " " + getLevel1() + " " + getLevel2() + " " + getLevel3() + " " + getLevel4();
           if(getGender() === "Female"){
-            result = result.replace(" he ", " she ");
-            result = result.replace(" He ", " She ");
-            result = result.replace(" his ", " her ");
-            result = result.replace(" His ", " Her ");
+            result = result.replaceAll(" he", " she ");
+            result = result.replaceAll(" He", " She ");
+            result = result.replaceAll(" his", " her ");
+            result = result.replaceAll(" His ", " Her ");
           }
-          result = result.replace("[None]", "");
-          result = result.replace("[student]", getName());
+          result = result.replaceAll("[None]", "");
+          result = result.replaceAll("[student]", getName());
 
           document.getElementById('result').value = result;
         }

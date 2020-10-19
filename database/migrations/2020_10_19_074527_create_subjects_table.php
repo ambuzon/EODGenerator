@@ -17,7 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->id();
             $table->string('subject')->unique();
             $table->timestamps();
-            $table->softDeletes()
+            $table->softDeletes();
         });
     }
 

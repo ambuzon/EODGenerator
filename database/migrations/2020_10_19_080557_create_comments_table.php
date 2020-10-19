@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->foreignId('subject_id');
             $table->string('criteria');
-            $table->string('comment');
+            $table->mediumText('comment');
             $table->timestamps();
             $table->softDeletes();
         });

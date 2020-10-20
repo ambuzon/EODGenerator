@@ -11,4 +11,9 @@ class Comment extends Model
    // Disables an item instead of permanently deleting it
    use SoftDeletes;
    protected $softDelete = true; 
+
+   // Adds many-to-one relationship with Subject
+   public function subject(){
+    return $this->belongsTo('App\Subject');
+    }
 }

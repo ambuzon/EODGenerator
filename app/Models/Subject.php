@@ -11,4 +11,9 @@ class Subject extends Model
     // Disables an item instead of permanently deleting it
     use SoftDeletes;
     protected $softDelete = true;
+
+    //Add one-to-many relationship with comments
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }

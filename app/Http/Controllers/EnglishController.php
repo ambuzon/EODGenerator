@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
 
 class EnglishController extends Controller
 {
@@ -23,7 +24,19 @@ class EnglishController extends Controller
      */
     public function index()
     {
-        return view('subjects.english');
+        function getComments($criteria){
+            $comments = Comment::where('subject_id', 2)
+                        ->where('criteria', $criteria)
+                        ->pluck('comment');
+            return $comments;
+        }
+        $comments = array(
+            'comments1' => getComments('Q1'),
+            'comments2' => getComments('Q2'),
+            'comments3' => getComments('Q3'),
+            'comments4' => getComments('Q4'),
+        );
+        return view('subjects.english')->with($comments);
     }
 
     public function submit(Request $request)

@@ -17,6 +17,6 @@ class Comment extends Model
 
    // Adds many-to-one relationship with Subject
    public function subject(){
-    return $this->belongsTo('App\Subject');
+    return $this->belongsTo('App\Models\Subject');
     }
 }

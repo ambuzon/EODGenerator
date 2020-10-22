@@ -12,6 +12,9 @@ class Comment extends Model
    use SoftDeletes;
    protected $softDelete = true; 
 
+   //Adds 'comments' table 
+   protected $table = 'comments';
+
    // Adds many-to-one relationship with Subject
    public function subject(){
     return $this->belongsTo('App\Subject');

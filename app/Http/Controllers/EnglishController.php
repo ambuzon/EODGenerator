@@ -23,7 +23,7 @@ class EnglishController extends Controller
      */
     public function index()
     {
-        return view('english');
+        return view('subjects.english');
     }
 
     public function submit(Request $request)

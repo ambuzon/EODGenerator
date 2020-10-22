@@ -23,7 +23,7 @@ class GlobalController extends Controller
      */
     public function index()
     {
-        return view('global');
+        return view('subjects.global');
     }
 
     public function submit(Request $request)

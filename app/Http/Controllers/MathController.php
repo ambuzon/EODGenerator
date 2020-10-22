@@ -23,7 +23,7 @@ class MathController extends Controller
      */
     public function index()
     {
-        return view('math');
+        return view('subjects.math');
     }
 
     public function submit(Request $request)

@@ -23,7 +23,7 @@ class ScienceController extends Controller
      */
     public function index()
     {
-        return view('science');
+        return view('subjects.science');
     }
 
     public function submit(Request $request)

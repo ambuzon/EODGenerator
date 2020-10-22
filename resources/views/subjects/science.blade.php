@@ -1,16 +1,5 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+@extends('layouts.report')
+@section('content')
 
 <body>
     <div class="jumbotron jumbotron-fluid">
@@ -232,5 +221,5 @@
       alert("Copied the text: " + copyText.value);
     }
   </script>
-</body>
-</html>
+
+@endsection

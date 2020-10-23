@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\Subject;
 
 class MathController extends Controller
 {
@@ -25,7 +26,8 @@ class MathController extends Controller
     public function index()
     {
         function getComments($criteria){
-            $comments = Comment::where('SubjectId', 4)
+            $subject_id = Subject::where('Subject', 'Math')->pluck('Id');
+            $comments = Comment::where('SubjectId', $subject_id)
                         ->where('Criteria', $criteria)
                         ->pluck('Comment');
             return $comments;

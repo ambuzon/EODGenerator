@@ -13,11 +13,11 @@ class CreateReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('subject_id');
-            $table->foreignId('student_id');
-            $table->mediumText('report');
+        Schema::create('REPORTS', function (Blueprint $table) {
+            $table->bigIncrements('Id');
+            $table->foreignId('SubjectId');
+            $table->foreignId('StudentId');
+            $table->mediumText('Report');
             $table->timestamps();
             $table->softDeletes();
         });

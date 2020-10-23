@@ -13,11 +13,11 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('subject_id');
-            $table->string('criteria');
-            $table->mediumText('comment');
+        Schema::create('COMMENTS', function (Blueprint $table) {
+            $table->bigIncrements('Id');
+            $table->foreignId('SubjectId');
+            $table->string('Criteria');
+            $table->mediumText('Comment');
             $table->timestamps();
             $table->softDeletes();
         });

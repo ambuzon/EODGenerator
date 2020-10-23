@@ -25,9 +25,9 @@ class ScienceController extends Controller
     public function index()
     {
         function getComments($criteria){
-            $comments = Comment::where('subject_id', 3)
-                        ->where('criteria', $criteria)
-                        ->pluck('comment');
+            $comments = Comment::where('SubjectId', 3)
+                        ->where('Criteria', $criteria)
+                        ->pluck('Comment');
             return $comments;
         }
         $comments = array(

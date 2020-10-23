@@ -25,9 +25,9 @@ class GlobalController extends Controller
     public function index()
     {
         function getComments($criteria){
-            $comments = Comment::where('subject_id', 1)
-                        ->where('criteria', $criteria)
-                        ->pluck('comment');
+            $comments = Comment::where('SubjectId', 1)
+                        ->where('Criteria', $criteria)
+                        ->pluck('Comment');
             return $comments;
         }
         $comments = array(

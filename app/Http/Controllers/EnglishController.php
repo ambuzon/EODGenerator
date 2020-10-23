@@ -25,9 +25,9 @@ class EnglishController extends Controller
     public function index()
     {
         function getComments($criteria){
-            $comments = Comment::where('subject_id', 2)
-                        ->where('criteria', $criteria)
-                        ->pluck('comment');
+            $comments = Comment::where('SubjectId', 2)
+                        ->where('Criteria', $criteria)
+                        ->pluck('Comment');
             return $comments;
         }
         $comments = array(

@@ -102,6 +102,6 @@
       </div>  
     </form>
     </div>
-    <script src="{{ asset('js/science.js') }}"></script>
+    <script src="{{ asset('js/subjects.js') }}"></script>
 
 @endsection

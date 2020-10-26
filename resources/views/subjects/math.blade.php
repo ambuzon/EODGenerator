@@ -202,6 +202,6 @@
       </div>  
     </form>
     </div>
-    <script src="{{ asset('js/math.js') }}"></script>
+    <script src="{{ asset('js/subjects.js') }}"></script>
 
 @endsection

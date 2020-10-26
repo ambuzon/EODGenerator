@@ -116,6 +116,6 @@
       </div>  
     </form>
     </div>
-    <script src="{{ asset('js/global.js') }}"></script>
+    <script src="{{ asset('js/subjects.js') }}"></script>
 
 @endsection

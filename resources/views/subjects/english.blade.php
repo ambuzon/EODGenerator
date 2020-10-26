@@ -103,5 +103,7 @@
       </div>  
     </form>
     </div>
-    <script src="{{ asset('js/english.js') }}"></script>
+<script src="{{ asset('js/subjects.js') }}">
+  
+</script>
 @endsection

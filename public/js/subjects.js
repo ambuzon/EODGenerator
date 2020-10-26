@@ -16,97 +16,161 @@ function getLevel0(){
 
 function getLevel1(){
   var level1 = document.getElementById("level1");
-  level1 = level1.options[level1.selectedIndex].value;
+  if (level1){
+    level1 = level1.options[level1.selectedIndex].value;
+    return level1;
+  }
+  level1 = "";
   return level1;
 }
 
 function getLevel2(){
-    var level2 = document.getElementById("level2");
+  var level2 = document.getElementById("level2");
+  if (level2){
     level2 = level2.options[level2.selectedIndex].value;
     return level2;
+  }
+  level2 = "";
+  return level2;
 }
 
 function getLevel2a(){
   var level2a = document.getElementById("level2a");
-  level2a = level2a.options[level2a.selectedIndex].value;
+  if (level2a){
+    level2a = level2a.options[level2a.selectedIndex].value;
+    return level2a;
+  }
+  level2a = "";
   return level2a;
 }
 
 function getLevel2b(){
-  var level2b = document.querySelector("input[name=level2b]:checked").value;
-  var level2b_value = "He demonstrates "+level2b+" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowoledge to suit a particular problem or situation.";
-  return level2b_value;
+  var level2b = document.getElementById("level2b");
+  var level2b_value = ""
+  if (level2b){
+  level2b = document.querySelector("input[name=level2b]:checked").value;
+    level2b_value = "He demonstrates "+ level2b +" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowoledge to suit a particular problem or situation.";   
+    }
+    return level2b_value;
 }
 
 function getLevel2c(){
   var level2c = document.getElementById("level2c");
-  level2c = level2c.options[level2c.selectedIndex].value;
+  if (level2c){
+    level2c = level2c.options[level2c.selectedIndex].value;
+    return level2c;
+  }
+  level2c = "";
   return level2c;
 }
 
 function getLevel3(){
-    var level3 = document.getElementById("level3");
+  var level3 = document.getElementById("level3");
+  if (level3){
     level3 = level3.options[level3.selectedIndex].value;
     return level3;
+  }
+  level3 = "";
+  return level3;
 }
 
 function getLevel3a(){
   var level3a = document.getElementById("level3a");
-  level3a = level3a.options[level3a.selectedIndex].value;
+  if (level3a){
+    level3a = level3a.options[level3a.selectedIndex].value;
+    return level3a;
+  }
+  level3a = "";
   return level3a;
 }
 
 function getLevel3b(){
   var level3b = document.getElementById("level3b");
-  level3b = level3b.options[level3b.selectedIndex].value;
+  if (level3b){
+    level3b = level3b.options[level3b.selectedIndex].value;
+    return level3b;
+  }
+  level3b = "";
   return level3b;
 }
 
 function getLevel3c(){
   var level3c = document.getElementById("level3c");
-  level3c = level3c.options[level3c.selectedIndex].value;
+  if (level3c){
+    level3c = level3c.options[level3c.selectedIndex].value;
+    return level3c;
+  }
+  level3c = "";
   return level3c;
 }
 
 function getLevel4(){
-    var level4 = document.getElementById("level4");
+  var level4 = document.getElementById("level4");
+  if (level4){
     level4 = level4.options[level4.selectedIndex].value;
     return level4;
+  }
+  level4 = "";
+  return level4;
 }
 
 function getLevel4a(){
   var level4a = document.getElementById("level4a");
-  level4a = level4a.options[level4a.selectedIndex].value;
+  if (level4a){
+    level4a = level4a.options[level4a.selectedIndex].value;
+    return level4a;
+  }
+  level4a = "";
   return level4a;
 }
 
 function getLevel4b(){
   var level4b = document.getElementById("level4b");
-  level4b = level4b.options[level4b.selectedIndex].value;
+  if (level4b){
+    level4b = level4b.options[level4b.selectedIndex].value;
+    return level4b;
+  }
+  level4b = "";
   return level4b;
 }
 
 function getLevel4c(){
   var level4c = document.getElementById("level4c");
-  level4c = level4c.options[level4c.selectedIndex].value;
+  if (level4c){
+    level4c = level4c.options[level4c.selectedIndex].value;
+    return level4c;
+  }
+  level4c = "";
   return level4c;
 }
 
 function getLevel4c1(){
   var level4c1 = document.getElementById("level4c1");
-  level4c1 = level4c1.options[level4c1.selectedIndex].value;
+  if (level4c1){
+    level4c1 = level4c1.options[level4c1.selectedIndex].value;
+    return level4c1;
+  }
+  level4c1 = "";
   return level4c1;
 }
 
 function getLevel4c2(){
   var level4c2 = document.getElementById("level4c2");
-  level4c2 = level4c2.options[level4c2.selectedIndex].value;
+  if (level4c2){
+    level4c2 = level4c2.options[level4c2.selectedIndex].value;
+    return level4c2;
+  }
+  level4c2 = "";
   return level4c2;
 }
 
 function getLevel4c3(){
   var level4c3 = document.getElementById("level4c3");
-  level4c3 = level4c3.options[level4c3.selectedIndex].value;
+  if (level4c3){
+    level4c3 = level4c3.options[level4c3.selectedIndex].value;
+    return level4c3;
+  }
+  level4c3 = "";
   return level4c3;
 }
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
+use App\Models\Subject;
 
 class MathController extends Controller
 {
@@ -23,7 +25,29 @@ class MathController extends Controller
      */
     public function index()
     {
-        return view('math');
+        function getComments($criteria){
+            $subject_id = Subject::where('Subject', 'Math')->pluck('Id');
+            $comments = Comment::where('SubjectId', $subject_id)
+                        ->where('Criteria', $criteria)
+                        ->pluck('Comment');
+            return $comments;
+        }
+        $comments = array(
+            'comments1' => getComments('Q1'),
+            'comments2a' => getComments('Q2a'),
+            'comments2c' => getComments('Q2c'),
+            'comments3a' => getComments('Q3a'),
+            'comments3b' => getComments('Q3b'),
+            'comments3c' => getComments('Q3c'),
+            'comments4a' => getComments('Q4a'),
+            'comments4b' => getComments('Q4b'),
+            'comments4c1' => getComments('Q4c1'),
+            'comments4c2' => getComments('Q4c2'),
+            'comments4c3' => getComments('Q4c3'),
+            'comments4c4' => getComments('Q4c4'),
+        );
+        
+            return view('subjects.math')->with($comments);
     }
 
     public function submit(Request $request)

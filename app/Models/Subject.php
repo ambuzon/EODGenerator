@@ -14,6 +14,6 @@ class Subject extends Model
 
     //Add one-to-many relationship with comments
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Models\Comment');
     }
 }

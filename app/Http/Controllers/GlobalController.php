@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
+use App\Models\Subject;
 
 class GlobalController extends Controller
 {
@@ -23,7 +25,21 @@ class GlobalController extends Controller
      */
     public function index()
     {
-        return view('global');
+        function getComments($criteria){
+            $subject_id = Subject::where('Subject', 'Global')->pluck('Id');
+            $comments = Comment::where('SubjectId', $subject_id)
+                        ->where('Criteria', $criteria)
+                        ->pluck('Comment');
+            return $comments;
+        }
+        $comments = array(
+            'comments1' => getComments('Q1'),
+            'comments2' => getComments('Q2'),
+            'comments3' => getComments('Q3'),
+            'comments4' => getComments('Q4'),
+            'comments4a' => getComments('Q4a'),
+        );
+        return view('subjects.global')->with($comments);
     }
 
     public function submit(Request $request)

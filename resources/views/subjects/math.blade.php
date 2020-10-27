@@ -76,7 +76,7 @@
 
       <label for="exampleFormControlSelect2">2b -Strengths</label>
       <br>
-      <label for="exampleFormControlSelect2">He demonstrates <span style="color:blue">[input]</span> understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowoledge to suit a particular problem or situation.</label>
+      <label for="exampleFormControlSelect2">He demonstrates <span style="color:blue">[input]</span> understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.</label>
       <br>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="level2b" id="level2b" oninput="getResults()" value="an excellent" checked>

@@ -9,7 +9,7 @@ function getGender(){
 }
 
 function getForm(question){
-  var level = document.getElementById(`${question}`);
+  var level = document.getElementById(question);
   if (level){
     level = level.options[level.selectedIndex].value;
     return level;
@@ -34,52 +34,67 @@ function getLevel2b(){
     return level2b_value;
 }
 
-// function formBlockMath3(question){
-//     var level = `${question}`
-//     var level3a = document.getElementById("level3a");
-//     var level3b = document.getElementById("level3b");
-//     var level3c = document.getElementById("level3c");
-//     if (level === 'level3a'){    
-//         if (level3a){
-//             level3b.disabled = true;
-//             level3c.disabled = true;
-//         }
-//     }
-//     if (level === 'level3b'){    
-//         if (level3b){
-//             level3a.disabled = true;
-//             level3c.disabled = true;
-//         }
-//     }
-//     if (level === 'level3c'){    
-//         if (level3c){
-//             level3b.disabled = true;
-//             level3a.disabled = true;
-//         }
-//     }
+function formBlockMath3(question){
+    var level = question
+    var level3a = document.getElementById("level3a");
+    var level3b = document.getElementById("level3b");
+    var level3c = document.getElementById("level3c");
+    if (level === 'level3a'){    
+        if (level3a){
+            level3b.disabled = true;
+            level3c.disabled = true;
+            level3a = level3a.options[level3a.selectedIndex].value;
+            if (level3a === '[None]'){
+              level3b.disabled = false;
+              level3c.disabled = false;
+            }
+        }
+    }
+    if (level === 'level3b'){    
+        if (level3b){
+            level3a.disabled = true;
+            level3c.disabled = true;
+            level3b = level3b.options[level3b.selectedIndex].value;
+            if (level3b === '[None]'){
+              level3a.disabled = false;
+              level3c.disabled = false;
+            }
+        }
+    }
+    if (level === 'level3c'){    
+        if (level3c){
+            level3b.disabled = true;
+            level3a.disabled = true;
+            level3c = level3c.options[level3c.selectedIndex].value;
+            if (level3c === '[None]'){
+              level3b.disabled = false;
+              level3a.disabled = false;
+            }
+        }
+    }
         
-// }
+}
 
 
 function getResults(){
   var result = getName() + " " + 
               getLevel0() + " " + 
-              getForm(level1) + " " + 
-              getForm(level2) + " " +
-              getForm(level2a) + " " + 
+              getForm('level1') + " " + 
+              getForm('level2') + " " +
+              getForm('level2a') + " " + 
               getLevel2b() + " " + 
-              getForm(level2c) + " " + 
-              getForm(level3) + " " +
-              getForm(level3a) + " " + 
-              getForm(level3b) + " " + 
-              getForm(level3c) + " " + 
-              getForm(level4) + " " +
-              getForm(level4a) + " " + 
-              getForm(level4b) + " " + 
-              getForm(level4c) + " " + 
-              getForm(level4c1) + " " + 
-              getForm(level4c2) + " " + 
-              getForm(level4c3);
+              getForm('level2c') + " " + 
+              getForm('level3') + " " +
+              getForm('level3a') + " " + 
+              getForm('level3b') + " " + 
+              getForm('level3c') + " " + 
+              getForm('level4') + " " +
+              getForm('level4a') + " " + 
+              getForm('level4b') + " " + 
+              getForm('level4c') + " " + 
+              getForm('level4c1') + " " + 
+              getForm('level4c2') + " " + 
+              getForm('level4c3');
 
   if(getGender() === "Female"){
     result = result.replaceAll(" he ", " she ");

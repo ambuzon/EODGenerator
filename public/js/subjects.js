@@ -9,7 +9,7 @@ function getGender(){
 }
 
 function getForm(question){
-  var level = document.getElementById(`${question}`);
+  var level = document.getElementById(question);
   if (level){
     level = level.options[level.selectedIndex].value;
     return level;
@@ -37,22 +37,22 @@ function getLevel2b(){
 function getResults(){
   var result = getName() + " " + 
               getLevel0() + " " + 
-              getForm(level1) + " " + 
-              getForm(level2) + " " +
-              getForm(level2a) + " " + 
+              getForm('level1') + " " + 
+              getForm('level2') + " " +
+              getForm('level2a') + " " + 
               getLevel2b() + " " + 
-              getForm(level2c) + " " + 
-              getForm(level3) + " " +
-              getForm(level3a) + " " + 
-              getForm(level3b) + " " + 
-              getForm(level3c) + " " + 
-              getForm(level4) + " " +
-              getForm(level4a) + " " + 
-              getForm(level4b) + " " + 
-              getForm(level4c) + " " + 
-              getForm(level4c1) + " " + 
-              getForm(level4c2) + " " + 
-              getForm(level4c3);
+              getForm('level2c') + " " + 
+              getForm('level3') + " " +
+              getForm('level3a') + " " + 
+              getForm('level3b') + " " + 
+              getForm('level3c') + " " + 
+              getForm('level4') + " " +
+              getForm('level4a') + " " + 
+              getForm('level4b') + " " + 
+              getForm('level4c') + " " + 
+              getForm('level4c1') + " " + 
+              getForm('level4c2') + " " + 
+              getForm('level4c3');
 
   if(getGender() === "Female"){
     result = result.replaceAll(" he ", " she ");

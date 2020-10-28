@@ -105,7 +105,7 @@
 
       <div class="form-group">
         <label for="exampleFormControlSelect2">3a -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="level3a" name="level3a" oninput="getResults()">
+        <select class="form-control" id="level3a" name="level3a" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments3a as $index => $value)
             <option>{{$comments3a[$index]}}</option>   

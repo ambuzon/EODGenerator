@@ -134,7 +134,7 @@
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect2">4a -Areas that need to be improved/How to Improve Them</label>
-        <select class="form-control" id="level4a" name="level4a" oninput="getResults()">
+        <select class="form-control" id="level4a" name="level4a" oninput="getResults();formBlockMath4();">
           <option>[None]</option>
           @foreach ($comments4a as $index => $value)
             <option>{{$comments4a[$index]}}</option>   
@@ -143,7 +143,7 @@
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect2">4b -Areas that need to be improved/How to Improve Them</label>
-        <select class="form-control" id="level4b" name="level4b" oninput="getResults()">
+        <select class="form-control" id="level4b" name="level4b" oninput="getResults();formBlockMath4();">
           <option>[None]</option>
           @foreach ($comments4b as $index => $value)
           <option>{{$comments4b[$index]}}</option>   
@@ -153,7 +153,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Making Careless Mistakes</label>
-        <select class="form-control" id="level4c" name="level4c" oninput="getResults()">
+        <select class="form-control" id="level4c" name="level4c" oninput="getResults();formBlockMath4();">
           <option>[None]</option>
           @foreach ($comments4c1 as $index => $value)
             <option>{{$comments4c1[$index]}}</option>   
@@ -163,7 +163,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Setting Out/Book Work</label>
-        <select class="form-control" id="level4c1" name="level4c1" oninput="getResults()">
+        <select class="form-control" id="level4c1" name="level4c1" oninput="getResults();formBlockMath4();">
           <option>[None]</option>
           @foreach ($comments4c2 as $index => $value)
             <option>{{$comments4c2[$index]}}</option>   
@@ -173,7 +173,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Attitude</label>
-        <select class="form-control" id="level4c2" name="level4c2" oninput="getResults()">
+        <select class="form-control" id="level4c2" name="level4c2" oninput="getResults();formBlockMath4();">
           <option>[None]</option>
           @foreach ($comments4c3 as $index => $value)
             <option>{{$comments4c3[$index]}}</option>   
@@ -183,7 +183,7 @@
       <div class="form-group">
         <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
         <label for="exampleFormControlSelect2">Category: Understanding /Mastery of the Curriculum</label>
-        <select class="form-control" id="level4c3" name="level4c3" oninput="getResults()">
+        <select class="form-control" id="level4c3" name="level4c3" oninput="getResults();formBlockMath4();">
           <option>[None]</option>
           @foreach ($comments4c4 as $index => $value)
             <option>{{$comments4c4[$index]}}</option>   

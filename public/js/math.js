@@ -65,6 +65,40 @@ function formBlockMath3(){
   }
 }
 
+function formBlockMath4(){
+  var level4a = document.getElementById("level4a");
+  var level4b = document.getElementById("level4b");
+  var level4c = document.getElementById("level4c");
+  var level4c1 = document.getElementById("level4c1");
+  var level4c2 = document.getElementById("level4c2");
+  var level4c3 = document.getElementById("level4c3");
+  let forms = [level4a, level4b, level4c, level4c1, level4c2, level4c3];
+  let block;
+  let chosen;
+  
+  for (i = 0; i < forms.length; i++){
+    var option = forms[i].options[forms[i].selectedIndex].value;
+    if (option !== '[None]'){ 
+      chosen = forms[i];
+      function returnBlock(form){
+        return form !== chosen;
+      }
+      block = forms.filter(returnBlock);
+      for (i = 0; i < block.length; i++){
+        block[i].disabled = true;
+      }
+      break;
+    } else if (option === '[None]' || false){
+      block = false;
+    }
+  } 
+  if (!block) {
+    for (i = 0; i < forms.length; i++){
+      forms[i].disabled = false;
+    }
+  }
+}
+
 function getResults(){
   var result = getName() + " " + 
               getLevel0() + " " + 

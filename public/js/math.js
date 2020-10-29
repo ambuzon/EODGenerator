@@ -34,47 +34,36 @@ function getLevel2b(){
     return level2b_value;
 }
 
-function formBlockMath3(question){
-    var level = question
-    var level3a = document.getElementById("level3a");
-    var level3b = document.getElementById("level3b");
-    var level3c = document.getElementById("level3c");
-    if (level === 'level3a'){    
-        if (level3a){
-            level3b.disabled = true;
-            level3c.disabled = true;
-            level3a = level3a.options[level3a.selectedIndex].value;
-            if (level3a === '[None]'){
-              level3b.disabled = false;
-              level3c.disabled = false;
-            }
-        }
+function formBlockMath3(){
+  var level3a = document.getElementById("level3a");
+  var level3b = document.getElementById("level3b");
+  var level3c = document.getElementById("level3c");
+  let forms = [level3a, level3b, level3c];
+  let block;
+  let chosen;
+  
+  for (i = 0; i < forms.length; i++){
+    var option = forms[i].options[forms[i].selectedIndex].value;
+    if (option !== '[None]'){ 
+      chosen = forms[i];
+      function returnBlock(form){
+        return form !== chosen;
+      }
+      block = forms.filter(returnBlock);
+      for (i = 0; i < block.length; i++){
+        block[i].disabled = true;
+      }
+      break;
+    } else if (option === '[None]' || false){
+      block = false;
     }
-    if (level === 'level3b'){    
-        if (level3b){
-            level3a.disabled = true;
-            level3c.disabled = true;
-            level3b = level3b.options[level3b.selectedIndex].value;
-            if (level3b === '[None]'){
-              level3a.disabled = false;
-              level3c.disabled = false;
-            }
-        }
+  } 
+  if (!block) {
+    for (i = 0; i < forms.length; i++){
+      forms[i].disabled = false;
     }
-    if (level === 'level3c'){    
-        if (level3c){
-            level3b.disabled = true;
-            level3a.disabled = true;
-            level3c = level3c.options[level3c.selectedIndex].value;
-            if (level3c === '[None]'){
-              level3b.disabled = false;
-              level3a.disabled = false;
-            }
-        }
-    }
-        
+  }
 }
-
 
 function getResults(){
   var result = getName() + " " + 

@@ -18,40 +18,42 @@
       </div>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Male" checked>
-        <label class="form-check-label" for="inlineRadio1">Male</label>
+        <input class="form-check-input" type="radio" name="gender" id="Male" oninput="getResults()" value="Male" checked>
+        <label class="form-check-label" for="Male">Male</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Female">
-        <label class="form-check-label" for="inlineRadio2">Female</label>
+        <input class="form-check-input" type="radio" name="gender" id="Female" oninput="getResults()" value="Female">
+        <label class="form-check-label" for="Female">Female</label>
       </div>
       <br>
       <br>
 
-      <label for="exampleFormControlSelect2">0 -Level of Overall Achievement</label>
+      <label for="level0">0 -Level of Overall Achievement</label>
       <br>
-      <label for="exampleFormControlSelect2">Demonstrates achievement of <span style="color:blue">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
+      <label>Demonstrates achievement of <span style="color:blue">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="all" checked>
-        <label class="form-check-label" for="inlineRadio2">all</label>
+        <input class="form-check-input" type="radio" name="level0" id="all" oninput="getResults()" value="all" checked>
+        <label class="form-check-label" for="all">all</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="most">
-        <label class="form-check-label" for="inlineRadio2">most</label>
+        <input class="form-check-input" type="radio" name="level0" id="most" oninput="getResults()" value="most">
+        <label class="form-check-label" for="most">most</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="some">
-        <label class="form-check-label" for="inlineRadio2">some</label>
+        <input class="form-check-input" type="radio" name="level0" id="some" oninput="getResults()" value="some">
+        <label class="form-check-label" for="some">some</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="few">
-        <label class="form-check-label" for="inlineRadio2">few</label>
+        <input class="form-check-input" type="radio" name="level0" id="few" oninput="getResults()" value="few">
+        <label class="form-check-label" for="few">few</label>
       </div>
+      
+      <br>
       <br>
         
       <div class="form-group">
-        <label for="exampleFormControlSelect2">1 -Attitude /Approach</label>
+        <label for="level1">1 -Attitude /Approach</label>
         <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments1 as $index => $value)
@@ -62,7 +64,7 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">2a -Strengths</label>
+        <label for="level2a">2a -Strengths</label>
         <select class="form-control" id="level2a" name="level2a" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2a as $index => $value)
@@ -71,30 +73,27 @@
         </select>
       </div>
 
+      <label>2b -Strengths</label>
       <br>
-      <br>
-
-      <label for="exampleFormControlSelect2">2b -Strengths</label>
-      <br>
-      <label for="exampleFormControlSelect2">He demonstrates <span style="color:blue">[input]</span> understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.</label>
+      <label>He demonstrates <span style="color:blue">[input]</span> understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.</label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level2b" id="level2b" oninput="getResults()" value="an excellent" checked>
-        <label class="form-check-label" for="inlineRadio2">Excellent</label>
+        <input class="form-check-input" type="radio" name="level2b" id="excellent" oninput="getResults()" value="an excellent" checked>
+        <label class="form-check-label" for="excellent">Excellent</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level2b" id="level2b" oninput="getResults()" value="a very good">
-        <label class="form-check-label" for="inlineRadio2">Very Good</label>
+        <input class="form-check-input" type="radio" name="level2b" id="very good" oninput="getResults()" value="a very good">
+        <label class="form-check-label" for="very good">Very Good</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level2b" id="level2b" oninput="getResults()" value="a sound">
-        <label class="form-check-label" for="inlineRadio2">Sound</label>
+        <input class="form-check-input" type="radio" name="level2b" id="sound" oninput="getResults()" value="a sound">
+        <label class="form-check-label" for="sound">Sound</label>
       </div>
       <br>
       <br>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">2c -Strengths</label>
+        <label for="level2c">2c -Strengths</label>
         <select class="form-control" id="level2c" name="level2c" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2c as $index => $value)
@@ -104,8 +103,8 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">3a -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="level3a" name="level3a" oninput="getResults();formBlockMath3();">
+        <label for="level3a">3a -How they went on mid-term/end of term test</label>
+        <select class="form-control" id="level3a" name="level3a" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments3a as $index => $value)
             <option>{{$comments3a[$index]}}</option>   
@@ -114,8 +113,8 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">3b -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="level3b" name="level3b" oninput="getResults();formBlockMath3();">
+        <label for="level3b">3b -How they went on mid-term/end of term test</label>
+        <select class="form-control" id="level3b" name="level3b" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments3b as $index => $value)
             <option>{{$comments3b[$index]}}</option>   
@@ -124,8 +123,8 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">3c -How they went on mid-term/end of term test</label>
-        <select class="form-control" id="level3c" name="level3c" oninput="getResults();formBlockMath3();">
+        <label form="level3c">3c -How they went on mid-term/end of term test</label>
+        <select class="form-control" id="level3c" name="level3c" oninput="getResults();();">
           <option>[None]</option>
           @foreach ($comments3c as $index => $value)
             <option>{{$comments3c[$index]}}</option>   
@@ -133,8 +132,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect2">4a -Areas that need to be improved/How to Improve Them</label>
-        <select class="form-control" id="level4a" name="level4a" oninput="getResults();formBlockMath4();">
+        <label for="level4a">4a -Areas that need to be improved/How to Improve Them</label>
+        <select class="form-control" id="level4a" name="level4a" oninput="getResults();();">
           <option>[None]</option>
           @foreach ($comments4a as $index => $value)
             <option>{{$comments4a[$index]}}</option>   
@@ -142,54 +141,60 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect2">4b -Areas that need to be improved/How to Improve Them</label>
-        <select class="form-control" id="level4b" name="level4b" oninput="getResults();formBlockMath4();">
+        <label for="level4b">4b -Areas that need to be improved/How to Improve Them</label>
+        <select class="form-control" id="level4b" name="level4b" oninput="getResults();();">
           <option>[None]</option>
           @foreach ($comments4b as $index => $value)
           <option>{{$comments4b[$index]}}</option>   
         @endforeach
         </select>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
-        <label for="exampleFormControlSelect2">Category: Making Careless Mistakes</label>
-        <select class="form-control" id="level4c" name="level4c" oninput="getResults();formBlockMath4();">
+
+      <div>
+        <label for="level4c">4c -Areas that need to be improved/How to Improve Them </label>
+        <label for="level4c">Category: Making Careless Mistakes</label>
+        <select class="form-control" id="level4c" name="level4c" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments4c1 as $index => $value)
             <option>{{$comments4c1[$index]}}</option>   
           @endforeach
         </select>
       </div>
+      <br>
       <div class="form-group">
-        <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
-        <label for="exampleFormControlSelect2">Category: Setting Out/Book Work</label>
-        <select class="form-control" id="level4c1" name="level4c1" oninput="getResults();formBlockMath4();">
-          <option>[None]</option>
-          @foreach ($comments4c2 as $index => $value)
-            <option>{{$comments4c2[$index]}}</option>   
-          @endforeach
-        </select>
+        <label for="level4dCategories" id="level4dCategories">4d -Areas that need to be improved/How to Improve Them</label>
+        
+        <div> 
+          <label for="level4d1">Category: Setting Out/Book Work</label>
+          <select class="form-control" id="level4d1" name="level4d1" oninput="getResults();formBlockMath4d();">
+            <option>[None]</option>
+            @foreach ($comments4c2 as $index => $value)
+              <option>{{$comments4c2[$index]}}</option>   
+            @endforeach
+          </select>
+        </div>
+        
+        <div>  
+          <label for="level4d2">Category: Attitude</label>
+          <select class="form-control" id="level4d2" name="level4d2" oninput="getResults();formBlockMath4d();">
+            <option>[None]</option>
+            @foreach ($comments4c3 as $index => $value)
+              <option>{{$comments4c3[$index]}}</option>   
+            @endforeach
+          </select>
+        </div>
+        
+        <div>  
+          <label for="level4d3">Category: Understanding /Mastery of the Curriculum</label>
+          <select class="form-control" id="level4d3" name="level4d3" oninput="getResults();formBlockMath4d();">
+            <option>[None]</option>
+            @foreach ($comments4c4 as $index => $value)
+              <option>{{$comments4c4[$index]}}</option>   
+            @endforeach
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
-        <label for="exampleFormControlSelect2">Category: Attitude</label>
-        <select class="form-control" id="level4c2" name="level4c2" oninput="getResults();formBlockMath4();">
-          <option>[None]</option>
-          @foreach ($comments4c3 as $index => $value)
-            <option>{{$comments4c3[$index]}}</option>   
-          @endforeach
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">4c -Areas that need to be improved/How to Improve Them</label>
-        <label for="exampleFormControlSelect2">Category: Understanding /Mastery of the Curriculum</label>
-        <select class="form-control" id="level4c3" name="level4c3" oninput="getResults();formBlockMath4();">
-          <option>[None]</option>
-          @foreach ($comments4c4 as $index => $value)
-            <option>{{$comments4c4[$index]}}</option>   
-          @endforeach
-        </select>
-      </div>
+
       <div class="form-group">
         <label for="result">Result (Please Edit Only Once Finished Placing Comments)</label>
         <textarea class="form-control" id="result" rows="15"></textarea>

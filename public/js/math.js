@@ -25,7 +25,7 @@ function getLevel0(){
 }
 
 function getLevel2b(){
-  var level2b = document.getElementById("level2b");
+  var level2b = document.getElementsByName("level2b");
   var level2b_value = ""
   if (level2b){
   level2b = document.querySelector("input[name=level2b]:checked").value;
@@ -34,67 +34,33 @@ function getLevel2b(){
     return level2b_value;
 }
 
-function formBlockMath3(){
-  var level3a = document.getElementById("level3a");
-  var level3b = document.getElementById("level3b");
-  var level3c = document.getElementById("level3c");
-  let forms = [level3a, level3b, level3c];
+function formBlockMath4d(){
+  let forms = ["level4d1", "level4d2", "level4d3"];
   let block;
-  let chosen;
   
   for (i = 0; i < forms.length; i++){
-    var option = forms[i].options[forms[i].selectedIndex].value;
-    if (option !== '[None]'){ 
-      chosen = forms[i];
+    var choice = document.getElementById(forms[i])
+    choice = choice.options[choice.selectedIndex].value;
+    if (choice !== '[None]'){ 
       function returnBlock(form){
-        return form !== chosen;
+        return form !== forms[i];
       }
       block = forms.filter(returnBlock);
       for (i = 0; i < block.length; i++){
-        block[i].disabled = true;
+        document.getElementById(block[i]).disabled = true;
+        document.getElementById(block[i]).parentNode.style.display = "none";
       }
       break;
-    } else if (option === '[None]' || false){
+    } else if (choice === '[None]' || false){
       block = false;
     }
   } 
   if (!block) {
     for (i = 0; i < forms.length; i++){
-      forms[i].disabled = false;
-    }
-  }
-}
-
-function formBlockMath4(){
-  var level4a = document.getElementById("level4a");
-  var level4b = document.getElementById("level4b");
-  var level4c = document.getElementById("level4c");
-  var level4c1 = document.getElementById("level4c1");
-  var level4c2 = document.getElementById("level4c2");
-  var level4c3 = document.getElementById("level4c3");
-  let forms = [level4a, level4b, level4c, level4c1, level4c2, level4c3];
-  let block;
-  let chosen;
-  
-  for (i = 0; i < forms.length; i++){
-    var option = forms[i].options[forms[i].selectedIndex].value;
-    if (option !== '[None]'){ 
-      chosen = forms[i];
-      function returnBlock(form){
-        return form !== chosen;
+      document.getElementById(forms[i]).disabled = false;
+      if (document.getElementById(forms[i]).parentNode.style.display === "none"){
+        document.getElementById(forms[i]).parentNode.style.display = "block";
       }
-      block = forms.filter(returnBlock);
-      for (i = 0; i < block.length; i++){
-        block[i].disabled = true;
-      }
-      break;
-    } else if (option === '[None]' || false){
-      block = false;
-    }
-  } 
-  if (!block) {
-    for (i = 0; i < forms.length; i++){
-      forms[i].disabled = false;
     }
   }
 }
@@ -115,9 +81,9 @@ function getResults(){
               getForm('level4a') + " " + 
               getForm('level4b') + " " + 
               getForm('level4c') + " " + 
-              getForm('level4c1') + " " + 
-              getForm('level4c2') + " " + 
-              getForm('level4c3');
+              getForm('level4d1') + " " + 
+              getForm('level4d2') + " " + 
+              getForm('level4d3');
 
   if(getGender() === "Female"){
     result = result.replaceAll(" he ", " she ");

@@ -25,13 +25,44 @@ function getLevel0(){
 }
 
 function getLevel2b(){
-  var level2b = document.getElementById("level2b");
+  var level2b = document.getElementsByName("level2b");
   var level2b_value = ""
-  if (level2b){
-  level2b = document.querySelector("input[name=level2b]:checked").value;
+  if (level2b === true){
+    level2b = document.querySelector("input[name=level2b]:checked").value;
     level2b_value = "He demonstrates "+ level2b +" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.";   
     }
-    return level2b_value;
+  return level2b_value;
+}
+
+function formBlockGlobal4(){
+  let forms = ["level4", "level4a"];
+  let block;
+  
+  for (i = 0; i < forms.length; i++){
+    var choice = document.getElementById(forms[i])
+    choice = choice.options[choice.selectedIndex].value;
+    if (choice !== '[None]'){ 
+      function returnBlock(form){
+        return form !== forms[i];
+      }
+      block = forms.filter(returnBlock);
+      for (i = 0; i < block.length; i++){
+        document.getElementById(block[i]).disabled = true;
+        document.getElementById(block[i]).parentNode.style.display = "none";
+      }
+      break;
+    } else if (choice === '[None]' || false){
+      block = false;
+    }
+  } 
+  if (!block) {
+    for (i = 0; i < forms.length; i++){
+      document.getElementById(forms[i]).disabled = false;
+      if (document.getElementById(forms[i]).parentNode.style.display === "none"){
+        document.getElementById(forms[i]).parentNode.style.display = "block";
+      }
+    }
+  }
 }
 
 function getResults(){

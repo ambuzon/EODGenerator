@@ -25,20 +25,20 @@
       <label for="exampleFormControlSelect2">Choose Subject</label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="subject" id="subject" value="math">
-        <label class="form-check-label" for="inlineRadio2">Math</label>
+        <input class="form-check-input" type="radio" name="subject" id="math" value="math">
+        <label class="form-check-label" for="math">Math</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="subject" id="subject" value="english">
-        <label class="form-check-label" for="inlineRadio2">English</label>
+        <input class="form-check-input" type="radio" name="subject" id="english" value="english">
+        <label class="form-check-label" for="english">English</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="subject" id="subject" value="science">
-        <label class="form-check-label" for="inlineRadio2">Science</label>
+        <input class="form-check-input" type="radio" name="subject" id="science" value="science">
+        <label class="form-check-label" for="science">Science</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="subject" id="subject" value="global">
-        <label class="form-check-label" for="inlineRadio2">Global</label>
+        <input class="form-check-input" type="radio" name="subject" id="global" value="global">
+        <label class="form-check-label" for="global">Global</label>
       </div>
 
       <div class="col-auto my-1">

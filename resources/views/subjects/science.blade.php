@@ -18,40 +18,40 @@
       </div>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Male" oninput="getResults()" checked>
-        <label class="form-check-label" for="inlineRadio1">Male</label>
+        <input class="form-check-input" type="radio" name="gender" id="Male" value="Male" oninput="getResults()" checked>
+        <label class="form-check-label" for="Male">Male</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Female" oninput="getResults()">
-        <label class="form-check-label" for="inlineRadio2">Female</label>
+        <input class="form-check-input" type="radio" name="gender" id="Female" value="Female" oninput="getResults()">
+        <label class="form-check-label" for="Female">Female</label>
       </div>
       <br>
       <br>
 
-      <label for="exampleFormControlSelect2">0 -Level of Overall Achievement</label>
+      <label>0 -Level of Overall Achievement</label>
       <br>
-      <label for="exampleFormControlSelect2">Demonstrates achievement of <span style="color:blue">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
+      <label>Demonstrates achievement of <span style="color:blue">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="all" checked>
-        <label class="form-check-label" for="inlineRadio2">all</label>
+        <input class="form-check-input" type="radio" name="level0" id="all" oninput="getResults()" value="all" checked>
+        <label class="form-check-label" for="all">all</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="most">
-        <label class="form-check-label" for="inlineRadio2">most</label>
+        <input class="form-check-input" type="radio" name="level0" id="most" oninput="getResults()" value="most">
+        <label class="form-check-label" for="most">most</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="some">
-        <label class="form-check-label" for="inlineRadio2">some</label>
+        <input class="form-check-input" type="radio" name="level0" id="some" oninput="getResults()" value="some">
+        <label class="form-check-label" for="some">some</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="few">
-        <label class="form-check-label" for="inlineRadio2">few</label>
+        <input class="form-check-input" type="radio" name="level0" id="few" oninput="getResults()" value="few">
+        <label class="form-check-label" for="few">few</label>
       </div>
       <br>
         
       <div class="form-group">
-        <label for="exampleFormControlSelect2">1 -Attitude /Approach</label>
+        <label for="level1">1 -Attitude /Approach</label>
         <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments1 as $index => $value)
@@ -62,7 +62,7 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">2 -Strengths</label>
+        <label for="level2">2 -Strengths</label>
         <select class="form-control" id="level2" name="level2" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2 as $index => $value)
@@ -72,7 +72,7 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">3 -How they went on mid-term/end of term test</label>
+        <label for="level3">3 -How they went on mid-term/end of term test</label>
         <select class="form-control" id="level3" name="level3" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments3 as $index => $value)
@@ -82,7 +82,7 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlSelect2">4 -Areas that need to be improved/How to Improve Them</label>
+        <label for="level4">4 -Areas that need to be improved/How to Improve Them</label>
         <select class="form-control" id="level4" name="level4" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments4 as $index => $value)

@@ -60,7 +60,7 @@
           @endforeach
         </select>
       </div>
-      <br>
+
       <div class="form-group">
         <label for="level2"><b>2 -Strengths</b></label>
         <select class="form-control" id="level2" name="level2" oninput="getResults()">
@@ -71,7 +71,7 @@
           
         </select>
       </div>
-      <br>
+
       <div class="form-group">
         <label for="level3"><b>3 -How they went on mid-term/end of term test</b></label>
         <select class="form-control" id="level3" name="level3" oninput="getResults()">
@@ -81,7 +81,7 @@
         @endforeach
         </select>
       </div>
-      <br>
+
       <div class="form-group">
         <label for="level4"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
         <select class="form-control" id="level4" name="level4" oninput="getResults()">
@@ -91,6 +91,7 @@
         @endforeach
         </select>
       </div>
+
       <div class="form-group">
         <label for="result">Result (Please Edit Only Once Finished Placing Comments)</label>
         <textarea class="form-control" id="result" rows="15"></textarea>
@@ -103,7 +104,5 @@
       </div>  
     </form>
     </div>
-<script src="{{ asset('js/subjects.js') }}">
-  
-</script>
+<script src="{{ asset('js/subjects.js') }}"></script>
 @endsection

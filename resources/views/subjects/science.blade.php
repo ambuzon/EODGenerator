@@ -49,9 +49,9 @@
         <label class="form-check-label" for="few">few</label>
       </div>
       <br>
-        
+      <br>
       <div class="form-group">
-        <label for="level1">1 -Attitude /Approach</label>
+        <label for="level1"><b>1 -Attitude /Approach</b></label>
         <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments1 as $index => $value)
@@ -62,7 +62,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level2">2 -Strengths</label>
+        <label for="level2"><b>2 -Strengths</b></label>
         <select class="form-control" id="level2" name="level2" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2 as $index => $value)
@@ -72,7 +72,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level3">3 -How they went on mid-term/end of term test</label>
+        <label for="level3"><b>3 -How they went on mid-term/end of term test</b></label>
         <select class="form-control" id="level3" name="level3" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments3 as $index => $value)
@@ -82,7 +82,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level4">4 -Areas that need to be improved/How to Improve Them</label>
+        <label for="level4"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
         <select class="form-control" id="level4" name="level4" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments4 as $index => $value)

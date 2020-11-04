@@ -28,7 +28,7 @@
       <br>
       <br>
 
-      <label>0 -Level of Overall Achievement</label>
+      <label><b>0 -Level of Overall Achievement</b></label>
       <br>
       <label>Demonstrates achievement of <span style="color:red">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
       <br>
@@ -49,9 +49,9 @@
         <label class="form-check-label" for="few">few</label>
       </div>
       <br>
-        
+      <br>
       <div class="form-group">
-        <label for="level1">1 -Attitude /Approach</label>
+        <label for="level1"><b>1 -Attitude /Approach</b></label>
         <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments1 as $index => $value)
@@ -62,7 +62,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level2">2 -Strengths</label>
+        <label for="level2"><b>2 -Strengths</b></label>
         <select class="form-control" id="level2" name="level2" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2 as $index => $value)
@@ -72,7 +72,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level3">3 -Projects/Units of Work</label>
+        <label for="level3"><b>3 -Projects/Units of Work</b></label>
         <select class="form-control" id="level3" name="level3" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments3 as $index => $value)
@@ -80,9 +80,8 @@
         @endforeach
         </select>
       </div>
-
       <div class="form-group">
-        <label for="level4">4 -Areas that need to be improved/How to Improve Them</label>
+        <label for="level4"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
         <select class="form-control" id="level4" name="level4" oninput="getResults();formBlockGlobal4();">
           <option>[None]</option>
           @foreach ($comments4 as $index => $value)
@@ -91,9 +90,9 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="level4a">4 -Areas that need to be improved/How to Improve Them</label>
-        <label for="level4a">Category: Work Habits/Attitude</label>
-
+        <label for="level4a"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
+        <label for="level4a"><b>Category: Work Habits/Attitude</b></label>
+        <br>
         <select class="form-control" id="level4a" name="level4a" oninput="getResults();formBlockGlobal4();">
           <option>[None]</option>
           @foreach ($comments4a as $index => $value)
@@ -101,6 +100,7 @@
         @endforeach
         </select>
       </div>
+      <br>
       <div class="form-group">
         <label for="result">Result (Please Edit Only Once Finished Placing Comments)</label>
         <textarea class="form-control" id="result" rows="15"></textarea>

@@ -28,7 +28,7 @@
       <br>
       <br>
 
-      <label for="level0">0 -Level of Overall Achievement</label>
+      <label for="level0"><b>0 -Level of Overall Achievement</b></label>
       <br>
       <label>Demonstrates achievement of <span style="color:blue">[input]</span> of the expected learning standards addressed during the current reporting period.</label>
       <br>
@@ -53,7 +53,7 @@
       <br>
         
       <div class="form-group">
-        <label for="level1">1 -Attitude /Approach</label>
+        <label for="level1"><b>1 -Attitude /Approach</b></label>
         <select class="form-control" id="level1" name="level1" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments1 as $index => $value)
@@ -64,7 +64,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level2a">2a -Strengths</label>
+        <label for="level2a"><b>2a -Strengths</b></label>
         <select class="form-control" id="level2a" name="level2a" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2a as $index => $value)
@@ -73,7 +73,7 @@
         </select>
       </div>
 
-      <label>2b -Strengths</label>
+      <label><b>2b -Strengths</b></label>
       <br>
       <label>He demonstrates <span style="color:blue">[input]</span> understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.</label>
       <br>
@@ -93,7 +93,7 @@
       <br>
 
       <div class="form-group">
-        <label for="level2c">2c -Strengths</label>
+        <label for="level2c"><b>2c -Strengths</b></label>
         <select class="form-control" id="level2c" name="level2c" oninput="getResults()">
           <option>[None]</option>
           @foreach ($comments2c as $index => $value)
@@ -103,7 +103,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level3a">3a -How they went on mid-term/end of term test</label>
+        <label for="level3a"><b>3a -How they went on mid-term/end of term test</b></label>
         <select class="form-control" id="level3a" name="level3a" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments3a as $index => $value)
@@ -113,7 +113,7 @@
       </div>
 
       <div class="form-group">
-        <label for="level3b">3b -How they went on mid-term/end of term test</label>
+        <label for="level3b"><b>3b -How they went on mid-term/end of term test</b></label>
         <select class="form-control" id="level3b" name="level3b" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments3b as $index => $value)
@@ -123,7 +123,7 @@
       </div>
 
       <div class="form-group">
-        <label form="level3c">3c -How they went on mid-term/end of term test</label>
+        <label form="level3c"><b>3c -How they went on mid-term/end of term test</b></label>
         <select class="form-control" id="level3c" name="level3c" oninput="getResults();();">
           <option>[None]</option>
           @foreach ($comments3c as $index => $value)
@@ -132,7 +132,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="level4a">4a -Areas that need to be improved/How to Improve Them</label>
+        <label for="level4a"><b>4a -Areas that need to be improved/How to Improve Them</b></label>
         <select class="form-control" id="level4a" name="level4a" oninput="getResults();();">
           <option>[None]</option>
           @foreach ($comments4a as $index => $value)
@@ -141,7 +141,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="level4b">4b -Areas that need to be improved/How to Improve Them</label>
+        <label for="level4b"><b>4b -Areas that need to be improved/How to Improve Them</b></label>
         <select class="form-control" id="level4b" name="level4b" oninput="getResults();();">
           <option>[None]</option>
           @foreach ($comments4b as $index => $value)
@@ -151,7 +151,7 @@
       </div>
 
       <div>
-        <label for="level4c">4c -Areas that need to be improved/How to Improve Them </label>
+        <label for="level4c"><b>4c -Areas that need to be improved/How to Improve Them</b></label>
         <label for="level4c">Category: Making Careless Mistakes</label>
         <select class="form-control" id="level4c" name="level4c" oninput="getResults();">
           <option>[None]</option>
@@ -162,7 +162,7 @@
       </div>
       <br>
       <div class="form-group">
-        <label for="level4dCategories" id="level4dCategories">4d -Areas that need to be improved/How to Improve Them</label>
+        <label for="level4dCategories" id="level4dCategories"><b>4d -Areas that need to be improved/How to Improve Them</b></label>
         
         <div> 
           <label for="level4d1">Category: Setting Out/Book Work</label>

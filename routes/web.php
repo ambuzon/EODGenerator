@@ -26,4 +26,8 @@ use App\Http\Controllers\SubjectsController;
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/submit', [HomeController::class, 'submit']);
 
+route::get('/english', [SubjectsController::class, 'english']);
+route::get('/science', [SubjectsController::class, 'science']);
+route::get('/math', [SubjectsController::class, 'math']);
+route::get('/global', [SubjectsController::class, 'global']);
 Route::resource('subjects', SubjectsController::class);

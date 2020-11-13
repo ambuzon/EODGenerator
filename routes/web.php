@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SubjectsController;
+use App\Http\Controllers\CommentsController;
 /*
 /*
 /*
@@ -26,8 +27,11 @@ use App\Http\Controllers\SubjectsController;
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/submit', [HomeController::class, 'submit']);
 
-route::get('/english', [SubjectsController::class, 'english']);
-route::get('/science', [SubjectsController::class, 'science']);
-route::get('/math', [SubjectsController::class, 'math']);
-route::get('/global', [SubjectsController::class, 'global']);
-Route::resource('subjects', SubjectsController::class);
+Route::get('/english', [SubjectsController::class, 'english'])->name('subjects.english');
+Route::get('/science', [SubjectsController::class, 'science'])->name('subjects.science');
+Route::get('/math', [SubjectsController::class, 'math'])->name('subjects.math');
+Route::get('/global', [SubjectsController::class, 'global'])->name('subjects.global');
+Route::resources([
+    'subjects' => SubjectsController::class,
+    'comments' => CommentsController::class,
+]);

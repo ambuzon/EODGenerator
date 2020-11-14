@@ -19,34 +19,34 @@
       <br>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Male" checked>
-        <label class="form-check-label" for="inlineRadio1">Male</label>
+        <input class="form-check-input" type="radio" name="gender" id="Male" oninput="getResults()" value="Male" checked>
+        <label class="form-check-label" for="Male">Male</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" oninput="getResults()" value="Female">
-        <label class="form-check-label" for="inlineRadio2">Female</label>
+        <input class="form-check-input" type="radio" name="gender" id="Female" oninput="getResults()" value="Female">
+        <label class="form-check-label" for="Female">Female</label>
       </div>
       <br>
       <br>
-      <label for="exampleFormControlSelect2"><b>0 -Level of Overall Achievement</b></label>
+      <label><b>0 -Level of Overall Achievement</b></label>
       <br>
-      <label for="exampleFormControlSelect2"><i>"demonstrates achievement of <span style="color:red">[input]</span> of the expected learning standards addressed during the current reporting period."</i></label>
+      <label><i>"demonstrates achievement of <span style="color:red">[input]</span> of the expected learning standards addressed during the current reporting period."</i></label>
       <br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="all" checked>
-        <label class="form-check-label" for="inlineRadio2">all</label>
+        <input class="form-check-input" type="radio" name="level0" id="all" oninput="getResults()" value="all" checked>
+        <label class="form-check-label" for="all">all</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="most">
-        <label class="form-check-label" for="inlineRadio2">most</label>
+        <input class="form-check-input" type="radio" name="level0" id="most" oninput="getResults()" value="most">
+        <label class="form-check-label" for="most">most</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="some">
-        <label class="form-check-label" for="inlineRadio2">some</label>
+        <input class="form-check-input" type="radio" name="level0" id="some" oninput="getResults()" value="some">
+        <label class="form-check-label" for="some">some</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="level0" id="level0" oninput="getResults()" value="few">
-        <label class="form-check-label" for="inlineRadio2">few</label>
+        <input class="form-check-input" type="radio" name="level0" id="few" oninput="getResults()" value="few">
+        <label class="form-check-label" for="few">few</label>
       </div>
       <br>
       <br>
@@ -60,7 +60,7 @@
           @endforeach
         </select>
       </div>
-      <br>
+
       <div class="form-group">
         <label for="level2"><b>2 -Strengths</b></label>
         <select class="form-control" id="level2" name="level2" oninput="getResults()">
@@ -71,7 +71,7 @@
           
         </select>
       </div>
-      <br>
+
       <div class="form-group">
         <label for="level3"><b>3 -How they went on mid-term/end of term test</b></label>
         <select class="form-control" id="level3" name="level3" oninput="getResults()">
@@ -81,7 +81,7 @@
         @endforeach
         </select>
       </div>
-      <br>
+
       <div class="form-group">
         <label for="level4"><b>4 -Areas that need to be improved/How to Improve Them</b></label>
         <select class="form-control" id="level4" name="level4" oninput="getResults()">
@@ -91,6 +91,7 @@
         @endforeach
         </select>
       </div>
+
       <div class="form-group">
         <label for="result">Result (Please Edit Only Once Finished Placing Comments)</label>
         <textarea class="form-control" id="result" rows="15"></textarea>
@@ -103,7 +104,5 @@
       </div>  
     </form>
     </div>
-<script src="{{ asset('js/subjects.js') }}">
-  
-</script>
+<script src="{{ asset('js/subjects.js') }}"></script>
 @endsection

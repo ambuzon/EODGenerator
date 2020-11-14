@@ -27,15 +27,15 @@ function getLevel0(){
 function getLevel2b(){
   var level2b = document.getElementsByName("level2b");
   var level2b_value = ""
-  if (level2b === true){
-    level2b = document.querySelector("input[name=level2b]:checked").value;
+  if (level2b){
+  level2b = document.querySelector("input[name=level2b]:checked").value;
     level2b_value = "He demonstrates "+ level2b +" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.";   
     }
-  return level2b_value;
+    return level2b_value;
 }
 
-function formBlockGlobal4(){
-  let forms = ["level4", "level4a"];
+function formBlockMath4d(){
+  let forms = ["level4d1", "level4d2", "level4d3"];
   let block;
   
   for (i = 0; i < forms.length; i++){
@@ -81,9 +81,9 @@ function getResults(){
               getForm('level4a') + " " + 
               getForm('level4b') + " " + 
               getForm('level4c') + " " + 
-              getForm('level4c1') + " " + 
-              getForm('level4c2') + " " + 
-              getForm('level4c3');
+              getForm('level4d1') + " " + 
+              getForm('level4d2') + " " + 
+              getForm('level4d3');
 
   if(getGender() === "Female"){
     result = result.replaceAll(" he ", " she ");

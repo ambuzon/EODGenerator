@@ -24,7 +24,7 @@ class CommentsController extends Controller
                                                 ->appends('subject', request('subject'));
         }
         else {
-        $comments = Comment::orderBy('SubjectId', 'ASC')->simplePaginate(6);
+        $comments = Comment::orderBy('SubjectId', 'ASC')->simplePaginate(8);
         }
         return view('comments.index')
                                 ->with('subjects', $subjects)
@@ -38,7 +38,13 @@ class CommentsController extends Controller
      */
     public function create()
     {
-        //
+        $contents = array(
+            'subjects' => Subject::all(),
+            'criteria' => Comment::orderBy('Criteria')
+                                    ->pluck('Criteria')
+                                    ->unique(),
+        );
+        return view('comments.create')->with($contents);
     }
 
     /**
@@ -49,7 +55,19 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'subject' => 'required',
+            'criteria' => 'required',
+            'comment' => 'required'
+        ]);
+        
+        $comment = new Comment;
+            $comment->SubjectId = $request->input('subject');
+            $comment->Criteria = $request->input('criteria');
+            $comment->Comment = $request->input('comment');
+            $comment->save();
+
+        return redirect(route('comments.index'))->with('success', 'Comment Added');
     }
 
     /**

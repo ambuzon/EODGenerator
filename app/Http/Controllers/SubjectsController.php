@@ -94,6 +94,11 @@ class SubjectsController extends Controller
         );
         return view('subjects.science')->with($comments);
     }
+
+    public function index()
+    {
+        //
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -14,10 +14,10 @@ class InitialSubjectsData extends Migration
     public function up()
     {
         $data = [
-            ['Subject' => 'Global'],
-            ['Subject' => 'English'],
-            ['Subject' => 'Science'],
-            ['Subject' => 'Math']
+            ['Subject' => 'Global', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()],
+            ['Subject' => 'English', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()],
+            ['Subject' => 'Science', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()],
+            ['Subject' => 'Math', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()]
         ];
         
         DB::table('subjects')->insert($data); // Query Builder approach

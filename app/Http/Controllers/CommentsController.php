@@ -20,11 +20,11 @@ class CommentsController extends Controller
         $subject_id = Subject::where('Subject', request('subject'))->pluck('Id');
         $comments = Comment::where('SubjectId', $subject_id)
                                                 ->orderBy('SubjectId', 'ASC')
-                                                ->simplePaginate(8)
+                                                ->paginate(5)
                                                 ->appends('subject', request('subject'));
         }
         else {
-        $comments = Comment::orderBy('SubjectId', 'ASC')->simplePaginate(8);
+        $comments = Comment::orderBy('SubjectId', 'ASC')->paginate(5);
         }
         return view('comments.index')
                                 ->with('subjects', $subjects)
@@ -87,9 +87,10 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($Id)
     {
-        //
+        $comment = Comment::find($Id);
+        return view('comments.edit')->with('comment', $comment);
     }
 
     /**
@@ -99,9 +100,16 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $Id)
     {
-        //
+        $this->validate($request, [
+            'comment' => 'required'
+        ]);
+        
+        $comment =Comment::find($Id);
+        $comment->Comment = $request->input('comment');
+        $comment->save();
+        return redirect(route('comments.index'))->with('success', 'Comment Edited');
     }
 
     /**
@@ -110,8 +118,11 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($Id)
     {
-        //
+        $comment = Comment::find($Id);
+
+        $comment->delete();
+        return redirect(route('comments.index'))->with('success', 'Comment Removed');
     }
 }

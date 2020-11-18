@@ -12,7 +12,7 @@ class Comment extends Model
    use SoftDeletes;
    protected $softDelete = true; 
 
-   public $primaryKey = 'id';
+   public $primaryKey = 'Id';
 
    //Adds 'comments' table 
    protected $table = 'comments';

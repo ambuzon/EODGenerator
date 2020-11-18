@@ -28,8 +28,7 @@
 
         <div class="form-group">
             <label for="comment"><h4>Comment<h4></label>
-            <textarea class ="form-control" id="comment" name="comment" type="text" rows="4" cols="150" placeholder="Type the comment here">
-            </textarea>
+            <textarea class ="form-control" id="comment" name="comment" type="text" rows="4" cols="150" placeholder="Type the comment here"></textarea>
         </div>   
 
         <div class="form-group">

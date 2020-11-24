@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SubjectsController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\StudentsController;
 /*
 /*
 /*
@@ -34,4 +35,5 @@ Route::get('/global', [SubjectsController::class, 'global'])->name('subjects.glo
 Route::resources([
     'subjects' => SubjectsController::class,
     'comments' => CommentsController::class,
+    'students' => StudentsController::class,
 ]);

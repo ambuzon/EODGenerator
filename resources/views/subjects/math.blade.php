@@ -124,7 +124,7 @@
 
       <div class="form-group">
         <label form="level3c"><b>3c -How they went on mid-term/end of term test</b></label>
-        <select class="form-control" id="level3c" name="level3c" oninput="getResults();();">
+        <select class="form-control" id="level3c" name="level3c" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments3c as $index => $value)
             <option>{{$comments3c[$index]}}</option>   
@@ -133,7 +133,7 @@
       </div>
       <div class="form-group">
         <label for="level4a"><b>4a -Areas that need to be improved/How to Improve Them</b></label>
-        <select class="form-control" id="level4a" name="level4a" oninput="getResults();();">
+        <select class="form-control" id="level4a" name="level4a" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments4a as $index => $value)
             <option>{{$comments4a[$index]}}</option>   
@@ -142,7 +142,7 @@
       </div>
       <div class="form-group">
         <label for="level4b"><b>4b -Areas that need to be improved/How to Improve Them</b></label>
-        <select class="form-control" id="level4b" name="level4b" oninput="getResults();();">
+        <select class="form-control" id="level4b" name="level4b" oninput="getResults();">
           <option>[None]</option>
           @foreach ($comments4b as $index => $value)
           <option>{{$comments4b[$index]}}</option>   

@@ -18,11 +18,11 @@ class StudentsController extends Controller
         if (request()->has('gender')){
         $students = Student::where('Gender', request('gender'))
                                             ->orderBy('FirstName', 'ASC')
-                                            ->paginate(5)
+                                            ->paginate(25)
                                             ->appends('gender', request('gender'));
         }
         else {
-        $students = Student::orderBy('FirstName', 'ASC')->paginate(5);
+        $students = Student::orderBy('FirstName', 'ASC')->paginate(25);
         }
         return view('students.index')
                             ->with('students', $students)

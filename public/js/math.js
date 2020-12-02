@@ -65,6 +65,28 @@ function formBlockMath4d(){
   }
 }
 
+function selectStudent(){
+  let nickname = document.getElementById('selectStudent').value;
+  var studentGender = document.getElementById('selectStudent').options[document.getElementById('selectStudent').selectedIndex].dataset.gender;
+  if (nickname){
+    let firstName = document.getElementById('firstName');
+    let gender = document.getElementById(studentGender);
+    firstName.value = nickname;
+    firstName.disabled = true;
+    gender.checked = true;
+    document.getElementById('Male').disabled = true;
+    document.getElementById('Female').disabled = true;
+  } else {
+      firstName.value = "";
+      firstName.disabled = false;
+      document.getElementById('Male').disabled = false;
+      document.getElementById('Female').disabled = false;
+  }
+}
+$(document).ready(function() {
+  $('#selectStudent').select2();
+});
+
 function getResults(){
   var result = getName() + " " + 
               getLevel0() + " " + 

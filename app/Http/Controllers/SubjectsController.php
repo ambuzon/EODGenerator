@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Subject;
+use App\Models\Student;
 
 class SubjectsController extends Controller
 {
@@ -27,8 +28,12 @@ class SubjectsController extends Controller
             'comments2' => getComments('Q2'),
             'comments3' => getComments('Q3'),
             'comments4' => getComments('Q4'),
+            'students' => Student::get()
         );
-        return view('subjects.english')->with($comments);
+
+        $students = Student::get();
+
+        return view('subjects.english')->with($comments);               
     }
 
     public function global()
@@ -46,6 +51,7 @@ class SubjectsController extends Controller
             'comments3' => getComments('Q3'),
             'comments4' => getComments('Q4'),
             'comments4a' => getComments('Q4a'),
+            'students' => Student::get()
         );
         return view('subjects.global')->with($comments);
     }
@@ -72,6 +78,7 @@ class SubjectsController extends Controller
             'comments4c2' => getComments('Q4c2'),
             'comments4c3' => getComments('Q4c3'),
             'comments4c4' => getComments('Q4c4'),
+            'students' => Student::get()
         );
         
             return view('subjects.math')->with($comments);
@@ -91,6 +98,7 @@ class SubjectsController extends Controller
             'comments2' => getComments('Q2'),
             'comments3' => getComments('Q3'),
             'comments4' => getComments('Q4'),
+            'students' => Student::get()
         );
         return view('subjects.science')->with($comments);
     }

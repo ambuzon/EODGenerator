@@ -32,7 +32,10 @@
         </div>   
 
         <div class="form-group">
-            <input type="submit" value="Submit">
+            <a href="{{ route('comments.index') }}" class="btn btn-primary"><i class="fa fa-angle-left">
+            </i> Back
+            </a>
+            <input class="btn btn-success" type="submit" value="Submit">
         </div>
     </form>
 </div>

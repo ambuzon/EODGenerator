@@ -1,9 +1,10 @@
 @extends('layouts.report')
 
 @section('content')
-<body>
+
 <br><br>    
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -87,7 +88,10 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <a href="{{ route('students.index') }}" class="btn btn-primary"><i class="fa fa-angle-left">
+                                </i> Back
+                                </a>
+                                <button type="submit" class="btn btn-success">
                                     Submit
                                 </button>
                             </div>
@@ -98,6 +102,7 @@
             </div>
         </div>
     </div>
+    
 </div>
-</body>    
+
 @endsection

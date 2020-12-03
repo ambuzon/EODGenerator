@@ -24,7 +24,7 @@ class CommentsController extends Controller
                                                 ->appends('subject', request('subject'));
         }
         else {
-        $comments = Comment::orderBy('SubjectId', 'ASC')->paginate(5);
+        $comments = Comment::orderBy('created_at', 'DESC')->paginate(5);
         }
         return view('comments.index')
                                 ->with('subjects', $subjects)

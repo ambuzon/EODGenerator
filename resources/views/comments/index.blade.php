@@ -1,4 +1,5 @@
 @extends('layouts.report')
+
 @section('content')
 
 {{-- Choose which subject comments to show --}}
@@ -17,13 +18,17 @@
   </div>
   <br>
   <div>
+    <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
+    </i> Back
+    </a>
+
     <a class="btn btn-primary" href="{{route('comments.create')}}">Create Comment</a>
   </div>
 
   <br>
   <div>
     {{-- Start of Section --}}
-    <section class="page-section" id="englishComments">
+    <section class="page-section">
       <table class="table table-bordered table-striped">
         
           <tr>
@@ -45,16 +50,14 @@
           </tr>
           @foreach($comments as $comment)
           <tr>
-              <td style="width:140px;">{{ $comment->Criteria }}</td>
+              <td style="width:140px;">{{ str_replace("Q", "Question ", $comment->Criteria) }}</td>
               <td style="width:140px;">{{ $comment->subject['Subject'] }}</td>
               <td style="width:700px;">{{ $comment->Comment }}</td>
               <td style="width:160px;">
                 
-                
-                
                 <form method="POST" id="delete-form" action="{{route('comments.destroy', $comment->Id)}}">
                     @csrf
-                    <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-info">Edit</a>
+                    <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-primary">Edit</a>
                     @method('DELETE')
                     <button type="submit" title="delete" class="btn btn-danger" onclick='return confirm("Delete this comment?\nPress OK to confirm.")'>
                       Delete
@@ -69,6 +72,6 @@
       {{ $comments->links() }} 
     </section> 
   </div>
-</div>
-
+  
+@endsection
 

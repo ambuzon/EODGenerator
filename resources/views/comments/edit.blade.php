@@ -19,8 +19,36 @@
             <a href="{{ route('comments.index') }}" class="btn btn-primary"><i class="fa fa-angle-left">
             </i> Back
             </a>
-            <input class="btn btn-success" type="submit" value="Submit">
+            <button class="btn btn-success" type="button" data-toggle="modal" data-target="#commentCreate">
+                <i class="fa fa-paper-plane"></i> Submit 
+            </button>
         </div>
+        <!-- Create Modal -->
+        <div class="modal fade" id="commentCreate" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModal">Add Comment Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    
+                    <div class="modal-body">
+                    <p>
+                        Submit Edit?
+                    </p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Wait, no</button>
+                    <button type="submit" class="btn btn-success">Yes, do it</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
     </form>
 </div>
 

@@ -22,7 +22,7 @@
     </i> Back
     </a>
 
-    <a class="btn btn-primary" href="{{route('comments.create')}}">Create Comment</a>
+    <a class="btn btn-primary" href="{{route('comments.create')}}"><i class="fa fa-plus"></i> Create Comment</a>
   </div>
 
   <br>
@@ -55,16 +55,13 @@
               <td style="width:700px;">{{ $comment->Comment }}</td>
               <td style="width:160px;">
                 
-                <form method="POST" id="delete-form" action="{{route('comments.destroy', $comment->Id)}}">
-                    @csrf
-                    <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-primary">Edit</a>
-                    @method('DELETE')
-                    <button type="submit" title="delete" class="btn btn-danger" onclick='return confirm("Delete this comment?\nPress OK to confirm.")'>
-                      Delete
-                  </button>
+                  <div>
+                    <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                    <button type="button" title="delete" class="btn btn-danger" data-toggle="modal" data-target="#commentDelete">
+                      <i class="fa fa-window-close"></i>
+                    </button>
                     </a>
-                    
-                </form>
+                  </div>
               </td>
           </tr>
           @endforeach   
@@ -72,6 +69,33 @@
       {{ $comments->links() }} 
     </section> 
   </div>
-  
+  {{-- Delete Modal --}}
+  <div class="modal fade" id="commentDelete" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModal">Delete Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="POST" id="delete-form" action="{{route('comments.destroy', $comment->Id)}}">
+        
+        <div class="modal-body">
+          @csrf
+          @method('DELETE')
+          <p>
+            Are you sure you want to delete?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No, go back</button>
+          <button type="submit" class="btn btn-danger">Yes, delete it</button>
+        </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>
 @endsection
 

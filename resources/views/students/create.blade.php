@@ -83,20 +83,43 @@
                                 @enderror
                             </div>
                         </div>
-                        
-
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <a href="{{ route('students.index') }}" class="btn btn-primary"><i class="fa fa-angle-left">
                                 </i> Back
                                 </a>
-                                <button type="submit" class="btn btn-success">
-                                    Submit
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#studentCreate">
+                                    <i class="fa fa-paper-plane"></i> Submit
                                 </button>
                             </div>
                         </div>
                         
+                        <!-- Create Modal -->
+                        <div class="modal fade" id="studentCreate" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModal">Add Student Confirmation</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    
+                                    <div class="modal-body">
+                                    <p>
+                                        Add new student?
+                                    </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Wait, no</button>
+                                    <button type="submit" class="btn btn-success">Yes, do it</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

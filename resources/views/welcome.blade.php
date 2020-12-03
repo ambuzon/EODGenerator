@@ -44,15 +44,15 @@
         </div>
       </div>
       <div class="col-auto my-1">
-        <button type="submit" class="btn btn-primary">Next</button>
+        <button type="submit" class="btn btn-primary">Next <i class="fa fa-angle-right"></i></button>
       </div>
     </form>
     <br>
     <div>
       <h2>Go to Index</h2>
       <div class="col-auto my-1">
-      <a class="btn btn-primary" href="{{route('students.index')}}">Students Index</a>
-      <a class="btn btn-secondary" href="{{route('comments.index')}}">Comments Index</a>
+      <a class="btn btn-primary" href="{{route('students.index')}}"><i class="fa fa-child"></i> Students Index</a>
+      <a class="btn btn-primary" href="{{route('comments.index')}}"><i class="fa fa-comment"></i> Comments Index</a>
       </div>
     </div>
 </body>

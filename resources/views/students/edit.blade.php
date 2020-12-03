@@ -85,7 +85,7 @@
                         
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <a href="{{ route('students.index') }}" class="btn btn-primary"><i class="fa fa-angle-left">
+                                <a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fa fa-angle-left">
                                 </i> Back
                                 </a>
         

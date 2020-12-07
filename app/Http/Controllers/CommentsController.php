@@ -31,6 +31,28 @@ class CommentsController extends Controller
                                 ->with('comments', $comments);
     }
 
+    public function search(Request $request)
+    {
+
+        $query = $request->input('query');
+        
+        $search_by = $request->input('search_by');
+
+        if($search_by === 'Subject') {
+            $subjectId = Subject::where($search_by,'LIKE','%'.$query.'%')->pluck('Id');
+            $comments = Comment::where('SubjectId', $subjectId)->paginate(25);
+        } else {
+            $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(25);}
+
+        $pagination = $comments->appends ( array (
+            'query' => $request->input ( 'query' ),
+            'search_by' => $request->input( 'search_by' ) 
+          ) );      
+        return view('comments.search')
+                            ->with('comments', $comments)
+                            ->withQuery($query);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SubjectsController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\SearchController;
 /*
 /*
 /*
@@ -32,6 +33,8 @@ Route::get('/english', [SubjectsController::class, 'english'])->name('subjects.e
 Route::get('/science', [SubjectsController::class, 'science'])->name('subjects.science');
 Route::get('/math', [SubjectsController::class, 'math'])->name('subjects.math');
 Route::get('/global', [SubjectsController::class, 'global'])->name('subjects.global');
+Route::get('/students/search', [StudentsController::class, 'search'])->name('students.search');
+Route::get('/comments/search', [CommentsController::class, 'search'])->name('comments.search');
 Route::resources([
     'subjects' => SubjectsController::class,
     'comments' => CommentsController::class,

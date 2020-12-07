@@ -7,14 +7,7 @@
   </div>
 
 <div class="container">
-  <div>
-    Filter:
-    @foreach ($genders as $gender)
-      <a href = "/students/?gender={{$gender}}">{{$gender}}</a> |
-    @endforeach
-    <a href = "/students">Reset</a> 
-  </div>
-  <br>
+
   <div>
     <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
     </i> Back
@@ -28,7 +21,7 @@
     <section class="page-section">
       
       {{-- Search Bar --}}
-      <form action="{{  url('students/search')  }}" method="GET" role="search">
+      <form action="{{  route('students.search')  }}" method="GET" role="search">
         @csrf
         <div class="input-group">
             <input type="text" class="form-control" name="query"
@@ -40,7 +33,6 @@
                     <option value="Nickname">Nickname</option>
                     <option value="FirstName">Firstname</option>
                     <option value="LastName">Lastname</option>
-                  
                 </select>
             
             <span class="input-group-btn">
@@ -57,13 +49,7 @@
 
           <tr>
               <h4>
-                @php
-                if (request()->has('gender')){
-                  print(request('gender'));} 
-                else {
-                  print("All");
-                }  
-                @endphp
+                Results for "{{$query}}"
               </h4>
         
           <tr>
@@ -90,6 +76,34 @@
                 </div>
                 
               </td>
+              <!-- Delete Modal -->
+              <div class="modal fade" id="studentDelete" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModal">Delete Confirmation</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form method="POST" id="delete-form" action="{{route('students.destroy', $student->Id)}}">
+                    
+                    <div class="modal-body">
+                      @csrf
+                      @method('DELETE')
+                      <p>
+                        Are you sure you want to delete?
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No, go back</button>
+                      <button type="submit" class="btn btn-danger">Yes, delete it</button>
+                    </div>
+                    
+                    </form>
+                  </div>
+                </div>
+              </div>
           </tr>
           @endforeach   
       </table>
@@ -97,32 +111,5 @@
     </section> 
   </div>
 </div>
-<!-- Delete Modal -->
-<div class="modal fade" id="studentDelete" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteModal">Delete Confirmation</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form method="POST" id="delete-form" action="{{route('students.destroy', $student->Id)}}">
-      
-      <div class="modal-body">
-        @csrf
-        @method('DELETE')
-        <p>
-          Are you sure you want to delete?
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, go back</button>
-        <button type="submit" class="btn btn-danger">Yes, delete it</button>
-      </div>
-      
-      </form>
-    </div>
-  </div>
-</div>
+
 @endsection

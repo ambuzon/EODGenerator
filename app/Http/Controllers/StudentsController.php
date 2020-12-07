@@ -29,6 +29,23 @@ class StudentsController extends Controller
                             ->with('genders', $genders);
     }
 
+    public function search(Request $request)
+    {
+
+        $query = $request->input('query');
+        
+        $search_by = $request->input('search_by');
+
+        $students = Student::where($search_by,'LIKE','%'.$query.'%')->paginate(25);
+
+        $pagination = $students->appends ( array (
+            'query' => $request->input ( 'query' ),
+            'search_by' => $request->input( 'search_by' ) 
+          ) );      
+        return view('students.search')
+                            ->with('students', $students)
+                            ->withQuery($query);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -41,13 +41,29 @@ class CommentsController extends Controller
         if($search_by === 'Subject') {
             $subjectId = Subject::where($search_by,'LIKE','%'.$query.'%')->pluck('Id');
             $comments = Comment::where('SubjectId', $subjectId)->paginate(25);
-        } else {
-            $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(25);}
+        } 
 
-        $pagination = $comments->appends ( array (
-            'query' => $request->input ( 'query' ),
-            'search_by' => $request->input( 'search_by' ) 
-          ) );      
+        else if ($search_by === 'Criteria') {
+            
+            if (str_contains($query, 'Question') || str_contains($query, "question")){
+                $newQuery = str_replace("Question", "Q", $query);
+                $newQuery = str_replace("question", "q", $newQuery);
+                $newQuery = str_replace(" ", "", $newQuery); 
+                $comments = Comment::where($search_by,'LIKE','%'.$newQuery.'%')->paginate(25);
+            }
+            else {
+                $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(25);
+            }
+        }
+
+        else {
+            $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(25);
+        }
+            $pagination = $comments->appends ( array (
+                'query' => $request->input ( 'query' ),
+                'search_by' => $request->input( 'search_by' ) ) );   
+            
+            
         return view('comments.search')
                             ->with('comments', $comments)
                             ->withQuery($query);

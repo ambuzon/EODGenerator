@@ -9,7 +9,7 @@
 <div class="container">
 
   <div>
-    <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
+    <a href="{{route('students.index')}}" class="btn btn-primary"><i class="fa fa-angle-left">
     </i> Back
     </a>
     <a class="btn btn-primary" href="{{route('students.create')}}"><i class="fa fa-plus"></i> Add New Student</a>

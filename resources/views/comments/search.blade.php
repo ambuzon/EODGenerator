@@ -10,7 +10,7 @@
 
 <div class="container">
   <div>
-    <a href="/" class="btn btn-primary"><i class="fa fa-angle-left">
+    <a href="{{route('comments.index')}} " class="btn btn-primary"><i class="fa fa-angle-left">
     </i> Back
     </a>
 

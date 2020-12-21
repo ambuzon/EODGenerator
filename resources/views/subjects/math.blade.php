@@ -165,8 +165,8 @@
       <label for="level4c">Category: Making Careless Mistakes</label>
       <select class="form-control" id="level4c" name="level4c" oninput="getResults();">
         <option>[None]</option>
-        @foreach ($comments4c1 as $index => $value)
-          <option>{{$comments4c1[$index]}}</option>   
+        @foreach ($comments4c as $index => $value)
+          <option>{{$comments4c[$index]}}</option>   
         @endforeach
       </select>
     </div>
@@ -178,8 +178,8 @@
         <label for="level4d1">Category: Setting Out/Book Work</label>
         <select class="form-control" id="level4d1" name="level4d1" oninput="getResults();formBlockMath4d();">
           <option>[None]</option>
-          @foreach ($comments4c2 as $index => $value)
-            <option>{{$comments4c2[$index]}}</option>   
+          @foreach ($comments4d1 as $index => $value)
+            <option>{{$comments4d1[$index]}}</option>   
           @endforeach
         </select>
       </div>
@@ -188,8 +188,8 @@
         <label for="level4d2">Category: Attitude</label>
         <select class="form-control" id="level4d2" name="level4d2" oninput="getResults();formBlockMath4d();">
           <option>[None]</option>
-          @foreach ($comments4c3 as $index => $value)
-            <option>{{$comments4c3[$index]}}</option>   
+          @foreach ($comments4d2 as $index => $value)
+            <option>{{$comments4d2[$index]}}</option>   
           @endforeach
         </select>
       </div>
@@ -198,8 +198,8 @@
         <label for="level4d3">Category: Understanding /Mastery of the Curriculum</label>
         <select class="form-control" id="level4d3" name="level4d3" oninput="getResults();formBlockMath4d();">
           <option>[None]</option>
-          @foreach ($comments4c4 as $index => $value)
-            <option>{{$comments4c4[$index]}}</option>   
+          @foreach ($comments4d3 as $index => $value)
+            <option>{{$comments4d3[$index]}}</option>   
           @endforeach
         </select>
       </div>

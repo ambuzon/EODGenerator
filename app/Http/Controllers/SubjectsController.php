@@ -74,10 +74,10 @@ class SubjectsController extends Controller
             'comments3c' => getComments('Q3c'),
             'comments4a' => getComments('Q4a'),
             'comments4b' => getComments('Q4b'),
-            'comments4c1' => getComments('Q4c1'),
-            'comments4c2' => getComments('Q4c2'),
-            'comments4c3' => getComments('Q4c3'),
-            'comments4c4' => getComments('Q4c4'),
+            'comments4c' => getComments('Q4c'),
+            'comments4d1' => getComments('Q4d1'),
+            'comments4d2' => getComments('Q4d2'),
+            'comments4d3' => getComments('Q4d3'),
             'students' => Student::get()
         );
         

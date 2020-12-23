@@ -11,4 +11,15 @@ class Student extends Model
     // Disables an item instead of permanently deleting it
     use SoftDeletes;
     protected $softDelete = true;
+
+    protected $fillable = [
+        'LastName',
+        'FirstName',
+        'MiddleName',
+        'MiddleInitial',
+        'Nickname',
+        'Gender'
+    ];
+
+    public $primaryKey = 'Id';
 }

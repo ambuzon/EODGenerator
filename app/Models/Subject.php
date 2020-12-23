@@ -12,6 +12,9 @@ class Subject extends Model
     use SoftDeletes;
     protected $softDelete = true;
 
+    //Adds 'subjects' table 
+    protected $table = 'subjects';
+
     //Add one-to-many relationship with comments
     public function comments(){
         return $this->hasMany('App\Models\Comment');

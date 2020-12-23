@@ -90,7 +90,7 @@
                                 </a>
         
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#studentCreate">
-                                    <i class="fa fa-paper-plane"></i>Submit
+                                    <i class="fa fa-paper-plane"></i> Submit
                                 </button>
                             </div>
                         </div>

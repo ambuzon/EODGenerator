@@ -68,7 +68,7 @@
             </i> Back
             </a> 
             
-            <a href="{{route('students.edit', $student->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
+            <a href="{{route('students.edit', $student->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
             
             <button type="button" title="delete" class="btn btn-danger" data-toggle="modal" data-target="#studentDelete">
                 <i class="fa fa-window-close"></i>

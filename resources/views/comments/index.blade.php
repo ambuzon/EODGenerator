@@ -81,7 +81,7 @@
               <td style="width:160px;">
                 
                   <div>
-                    <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                    <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
                     <button type="button" title="delete" class="btn btn-danger" data-toggle="modal" data-target="#commentDelete">
                       <i class="fa fa-window-close"></i>
                     </button>

@@ -30,7 +30,7 @@ class CommentsController extends Controller
                                 ->with('subjects', $subjects)
                                 ->with('comments', $comments);
     }
-
+    
     public function search(Request $request)
     {
 

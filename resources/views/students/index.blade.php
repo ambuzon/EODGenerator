@@ -83,7 +83,7 @@
                     <a href="{{route('students.show', $student->Id)}}" class="btn btn-info"><i class="fa fa-eye"></i> Details</a>
                     <a href="{{route('students.edit', $student->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
               
-                    <button type="button" title="delete" class="btn btn-danger" data-toggle="modal" data-target="#studentDelete">
+                    <button data-id="{{$student->Id}}" type="button" title="delete" class="btn btn-danger delete" data-toggle="modal" data-target="#studentDelete">
                       <i class="fa fa-window-close"></i>
                     </button>
                     
@@ -91,6 +91,8 @@
                 
               </td>
           </tr>
+          
+          @endforeach   
           <!-- Delete Modal -->
           <div class="modal fade" id="studentDelete" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -101,11 +103,12 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form method="POST" id="delete-form" action="{{route('students.destroy', $student->Id)}}">
-                
+ 
                 <div class="modal-body">
+                  <form method="POST" id="delete-form" action="{{route('students.destroy', 'deleteId')}}">
                   @csrf
                   @method('DELETE')
+                  <input type="hidden" id="deleteId" name="deleteId">
                   <p>
                     Are you sure you want to delete?
                   </p>
@@ -119,11 +122,18 @@
               </div>
             </div>
           </div>
-          @endforeach   
+          <!-- End of Delete Modal -->
       </table>
       {{ $students->links() }} 
     </section> 
   </div>
 </div>
+
+<script type="application/javascript">
+  $(document).on('click','.delete',function(){
+    let id = $(this).attr('data-id');
+    $('#deleteId').val(id);
+  });
+</script>
 
 @endsection

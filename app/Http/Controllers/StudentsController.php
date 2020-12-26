@@ -173,9 +173,17 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($Id)
+    // public function destroy($Id)
+    // {
+    //     $student = Student::find($Id);
+    //     $student->delete();
+
+    //     return redirect()->route('students.index')->with('success', 'Student Removed');
+    // }
+
+    public function destroy(Request $request)
     {
-        $student = Student::find($Id);
+        $student = Student::find($request->deleteId);
         $student->delete();
 
         return redirect()->route('students.index')->with('success', 'Student Removed');

@@ -19,7 +19,7 @@ class CommentsController extends Controller
         if (request()->has('subject')){
         $subject_id = Subject::where('Subject', request('subject'))->pluck('Id');
         $comments = Comment::where('SubjectId', $subject_id)
-                                                ->orderBy('SubjectId', 'ASC')
+                                                ->orderBy('created_at', 'DESC')
                                                 ->paginate(5)
                                                 ->appends('subject', request('subject'));
         }
@@ -40,7 +40,7 @@ class CommentsController extends Controller
 
         if($search_by === 'Subject') {
             $subjectId = Subject::where($search_by,'LIKE','%'.$query.'%')->pluck('Id');
-            $comments = Comment::where('SubjectId', $subjectId)->paginate(25);
+            $comments = Comment::where('SubjectId', $subjectId)->paginate(5);
         } 
 
         else if ($search_by === 'Criteria') {
@@ -49,15 +49,15 @@ class CommentsController extends Controller
                 $newQuery = str_replace("Question", "Q", $query);
                 $newQuery = str_replace("question", "q", $newQuery);
                 $newQuery = str_replace(" ", "", $newQuery); 
-                $comments = Comment::where($search_by,'LIKE','%'.$newQuery.'%')->paginate(25);
+                $comments = Comment::where($search_by,'LIKE','%'.$newQuery.'%')->paginate(5);
             }
             else {
-                $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(25);
+                $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(5);
             }
         }
 
         else {
-            $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(25);
+            $comments = Comment::where($search_by,'LIKE','%'.$query.'%')->paginate(5);
         }
             $pagination = $comments->appends ( array (
                 'query' => $request->input ( 'query' ),
@@ -156,9 +156,17 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($Id)
+    // public function destroy($Id)
+    // {
+    //     $comment = Comment::find($Id);
+
+    //     $comment->delete();
+    //     return redirect(route('comments.index'))->with('success', 'Comment Removed');
+    // }
+
+    public function destroy(Request $request)
     {
-        $comment = Comment::find($Id);
+        $comment = Comment::find($request->deleteId);
 
         $comment->delete();
         return redirect(route('comments.index'))->with('success', 'Comment Removed');

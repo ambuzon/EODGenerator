@@ -28,8 +28,13 @@ function getLevel2b(){
   var level2b = document.getElementsByName("level2b");
   var level2b_value = ""
   if (level2b){
-  level2b = document.querySelector("input[name=level2b]:checked").value;
-    level2b_value = "He demonstrates "+ level2b +" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation.";   
+    level2b = document.querySelector("input[name=level2b]:checked").value;
+    if (level2b) {
+      level2b_value = "He demonstrates "+ level2b +" understanding of the topics that we have covered this semester he is readily able to recall the taught strategies with a high degree of accuracy. He is always able to apply his maths knowledge to suit a particular problem or situation."; 
+    } 
+    else {
+      level2b_value = ""
+    }
     }
     return level2b_value;
 }

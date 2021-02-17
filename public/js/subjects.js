@@ -143,7 +143,7 @@ function getResults(){
 
 function myFunction() {
   /* Get the text field */
-  var copyText = document.getElementById("replace");
+  var copyText = document.getElementById("result");
 
   /* Select the text field */
   copyText.select();

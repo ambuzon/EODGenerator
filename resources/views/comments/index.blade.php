@@ -82,46 +82,54 @@
                 
                   <div>
                     <a href="{{route('comments.edit', $comment->Id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
-                    <button type="button" title="delete" class="btn btn-danger" data-toggle="modal" data-target="#commentDelete">
+                    <button data-id="{{$comment->Id}}" type="button" title="delete" class="btn btn-danger delete" data-toggle="modal" data-target="#commentDelete">
                       <i class="fa fa-window-close"></i>
                     </button>
                     </a>
                   </div>
               </td>
           </tr>
-          {{-- Delete Modal --}}
-          <div class="modal fade" id="commentDelete" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="deleteModal">Delete Confirmation</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form method="POST" id="delete-form" action="{{route('comments.destroy', $comment->Id)}}">
-                
-                <div class="modal-body">
-                  @csrf
-                  @method('DELETE')
-                  <p>
-                    Are you sure you want to delete?
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No, go back</button>
-                  <button type="submit" class="btn btn-danger">Yes, delete it</button>
-                </div>
-                
-                </form>
+          
+          @endforeach   
+        <!-- Delete Modal -->
+        <div class="modal fade" id="commentDelete" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModal">Delete Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
+
+              <div class="modal-body">
+                <form method="POST" id="delete-form" action="{{route('comments.destroy', 'deleteId')}}">
+                @csrf
+                @method('DELETE')
+                <input type="hidden" id="deleteId" name="deleteId">
+                <p>
+                  Are you sure you want to delete?
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No, go back</button>
+                <button type="submit" class="btn btn-danger">Yes, delete it</button>
+              </div>
+              
+              </form>
             </div>
           </div>
-          @endforeach   
+        </div>
+        <!-- End of Delete Modal -->
       </table>
       {{ $comments->links() }} 
     </section> 
   </div>
-  
+<script type="application/javascript">
+  $(document).on('click','.delete',function(){
+    let id = $(this).attr('data-id');
+    $('#deleteId').val(id);
+  });
+</script>
 @endsection
 
